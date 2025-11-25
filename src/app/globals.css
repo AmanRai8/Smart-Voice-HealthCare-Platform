@@ -182,3 +182,11 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* This part is coming from tailwind docs....it is for cursor pointer to buttons by default*/
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
