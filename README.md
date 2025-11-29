@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🦷 Dental AI Assistant
 
-## Getting Started
+🚧 **Under Development** — actively being built & improved.
 
-First, run the development server:
+A modern, full-stack dental appointment and AI-assistant platform built with **Next.js**, **Tailwind CSS**, **TypeScript**, **Prisma**, **PostgreSQL (Neon)**, **Clerk**, **Vapi**, and more.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✨ Highlights
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- 🏠 **Modern Landing Page** with gradients & images
+- 🔐 **Authentication via Clerk** (Google, GitHub, Email & Password)
+- 🔑 **Email Verification** (6-digit OTP)
+- 📅 **Appointment Booking System**
+- 🦷 **3-Step Booking Flow** (Dentist → Service & Time → Confirm)
+- 📩 **Email Notifications** (Resend)
+- 📊 **Admin Dashboard** for managing appointments
+- 🗣️ **AI Voice Agent** powered by **Vapi**
+- 💳 **Subscription Payments** via Clerk
+- 🧾 **Automatic Invoices** via email
+- 💸 **Smart Subscription Upgrades**
+- 📂 **PostgreSQL Database** (Neon)
+- 🎨 **Tailwind CSS + Shadcn UI**
+- ⚡ **TanStack Query** for data fetching
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🛠️ Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+### **Core Technologies**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+![Next.js](https://img.shields.io/badge/Next.js-black?logo=next.js&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38BDF8?logo=tailwind-css&logoColor=white)
+![Shadcn UI](https://img.shields.io/badge/Shadcn_UI-000000?logo=shadcnui&logoColor=white)
+![Prisma](https://img.shields.io/badge/Prisma-2D3748?logo=prisma&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?logo=postgresql&logoColor=white)
+![Neon](https://img.shields.io/badge/Neon-00E599?logo=neon&logoColor=white)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### **Auth, Billing & AI**
 
-## Deploy on Vercel
+![Clerk](https://img.shields.io/badge/Clerk-5A67D8?logo=clerk&logoColor=white)
+![Vapi](https://img.shields.io/badge/Vapi_AI-111827?logo=voice&logoColor=white)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### **Developer Tools**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+![Git](https://img.shields.io/badge/Git-F05032?logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-000000?logo=github&logoColor=white)
+![CodeRabbit](https://img.shields.io/badge/CodeRabbit-A855F7?logo=github&logoColor=white)
+![TanStack Query](https://img.shields.io/badge/TanStack_Query-FF4154?logo=react-query&logoColor=white)
+
+---
+
+## 📅 Features Overview
+
+### **Authentication & Billing (Clerk)**
+
+- OAuth login
+- Email/password
+- OTP verification
+- Subscription system
+- Smart upgrades
+- Auto-generated invoices
+
+### **Booking System**
+
+- Dentist selection
+- Service & time selection
+- Real-time availability
+- Confirmation emails
+- Admin dashboard
+
+### **AI Voice Assistant (Vapi)**
+
+- Voice-based booking
+- AI-powered responses
+- Pro-plan feature
+
+---
+
+## 🧰 Database (Neon + Prisma)
+
+- PostgreSQL on Neon
+- Prisma schema-driven development
+- Automatic migrations
+
+---
+
+## 🚀 Deployment
+
+Deployed on **Sevalla** (free-tier friendly).
+Environment variables managed via Sevalla dashboard.
+
+---
+
+## 📬 Contributing
+
+PRs are welcome!
+CodeRabbit assists with automated PR review & optimization.
