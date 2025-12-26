@@ -6,30 +6,42 @@ import { currentUser } from "@clerk/nextjs/server";
 
 export async function syncUserAction() {
   try {
-    // Get the currently signed-in Clerk user
     const user = await currentUser();
     if (!user) return null;
 
-    // Check if user already exists in the database
-    const existingUser = await prisma.user.findUnique({
-      where: { clerkId: user.id },
-    });
-    if (existingUser) return existingUser;
+    const email = user.emailAddresses?.[0]?.emailAddress ?? null;
 
-    // Create a new user in the database
-    const dbUser = await prisma.user.create({
-      data: {
+    if (!email) {
+      throw new Error("Clerk user has no email address");
+    }
+
+    /**
+     * Upsert user by email (unique)
+     * - prevents duplicate email errors
+     * - updates clerkId if user already exists
+     */
+    const dbUser = await prisma.user.upsert({
+      where: {
+        email,
+      },
+      update: {
         clerkId: user.id,
         firstName: user.firstName ?? null,
         lastName: user.lastName ?? null,
-        email: user.emailAddresses[0]?.emailAddress ?? null,
-        phone: user.phoneNumbers[0]?.phoneNumber ?? null,
+        phone: user.phoneNumbers?.[0]?.phoneNumber ?? null,
+      },
+      create: {
+        clerkId: user.id,
+        email,
+        firstName: user.firstName ?? null,
+        lastName: user.lastName ?? null,
+        phone: user.phoneNumbers?.[0]?.phoneNumber ?? null,
       },
     });
 
     return dbUser;
   } catch (error) {
-    console.error("Error in syncUserAction:", error);
-    throw error; // Optional: rethrow so client can handle it
+    console.error("❌ Error in syncUserAction:", error);
+    throw error;
   }
 }

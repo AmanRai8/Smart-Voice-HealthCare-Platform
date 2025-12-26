@@ -20,8 +20,8 @@ export default async function Home() {
       <HowItWorks />
       <WhatToAsk />
       <PricingSection />
-      <CTA />
-      <Footer />
+      {/* <CTA /> */}
+      {/* <Footer /> */}
     </div>
   );
 }
