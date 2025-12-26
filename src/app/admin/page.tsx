@@ -1,10 +1,11 @@
-// /dashboard/page.tsx
+export const dynamic = "force-dynamic";
+
 import { currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
-import { SignOutButton } from "@clerk/nextjs";
+import { SignedIn, SignOutButton } from "@clerk/nextjs";
 
-export default async function DashboardPage() {
+async function AdminPage() {
   const clerkUser = await currentUser();
 
   if (!clerkUser) redirect("/");
@@ -13,21 +14,20 @@ export default async function DashboardPage() {
     where: { clerkId: clerkUser.id },
   });
 
-  if (dbUser?.role === "ADMIN") redirect("/admin");
+  if (!dbUser || dbUser.role !== "ADMIN") redirect("/");
 
   return (
     <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4">User Dashboard</h1>
-      <p>Welcome, {dbUser?.firstName || "User"}!</p>
-
-      {/* Client-side SignOutButton */}
-      <div>
+      <SignedIn>
+        <p className="text-2xl font-bold mb-4">You are the admin</p>
         <SignOutButton>
           <button className="px-4 py-2 bg-red-500 text-white rounded">
             Sign Out
           </button>
         </SignOutButton>
-      </div>
+      </SignedIn>
     </div>
   );
 }
+
+export default AdminPage;
