@@ -86,13 +86,6 @@ A modern, full-stack dental appointment and AI-assistant platform built with **N
 
 ---
 
-## 🚀 Deployment
-
-Deployed on **Sevalla** (free-tier friendly).
-Environment variables managed via Sevalla dashboard.
-
----
-
 ## 📬 Contributing
 
 PRs are welcome!
