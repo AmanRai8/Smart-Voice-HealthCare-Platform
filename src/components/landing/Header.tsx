@@ -15,19 +15,30 @@ function Header() {
             height={32}
             className="w-11"
           />
-          <span className="font-semibold text-lg">DentWise</span>
+          <span className="font-semibold text-lg">
+            AI Voice Dental Platform
+          </span>
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
-          <a href="#" className="text-muted-foreground hover:text-foreground">
+          <Link
+            href="#how-it-works"
+            className="text-muted-foreground hover:text-foreground transition-colors"
+          >
             How it Works
-          </a>
-          <a href="#" className="text-muted-foreground hover:text-foreground">
+          </Link>
+          <Link
+            href="#pricing"
+            className="text-muted-foreground hover:text-foreground transition-colors"
+          >
             Pricing
-          </a>
-          <a href="#" className="text-muted-foreground hover:text-foreground">
+          </Link>
+          <Link
+            href="#about"
+            className="text-muted-foreground hover:text-foreground transition-colors"
+          >
             About
-          </a>
+          </Link>
         </div>
 
         <div className="flex items-center gap-3">
