@@ -1,11 +1,17 @@
 "use client";
 
 import Navbar from "@/components/Navbar";
+import { useGetAppointments } from "@/hooks/use-appointments";
+import { useGetDoctors } from "@/hooks/use-doctors";
 import { useUser } from "@clerk/nextjs";
 import { SettingsIcon } from "lucide-react";
 
 function AdminDashboardClient() {
   const { user } = useUser();
+  const { data: doctors = [], isLoading: doctorsLoading } = useGetDoctors();
+  const { data: appointments = [], isLoading: appointmentsLoading } =
+    useGetAppointments();
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
