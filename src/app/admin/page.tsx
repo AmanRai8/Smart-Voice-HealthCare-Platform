@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 
 import Navbar from "@/components/Navbar";
+import AdminDashboardClient from "./AdminDashboardClient";
 
 async function AdminPage() {
   const clerkUser = await currentUser();
@@ -20,6 +21,7 @@ async function AdminPage() {
   return (
     <div>
       <Navbar />
+      <AdminDashboardClient />
     </div>
   );
 }
