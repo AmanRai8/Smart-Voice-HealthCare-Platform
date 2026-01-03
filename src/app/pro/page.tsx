@@ -17,7 +17,7 @@ async function ProPage() {
         <div className="mb-12 overflow-hidden">
           <div className="flex items-center justify-between bg-gradient-to-br from-primary/10 to-background rounded-3xl p-8 border border-primary/20">
             <div className="space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-primar/10 rounded-full border border-primary/20 ">
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 rounded-full border border-primary/20 ">
                 <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
                 <span className="text-sm font-medium text-primary">
                   Upgrade to Pro
@@ -26,11 +26,11 @@ async function ProPage() {
 
               <div>
                 <h1 className="text-4xl font-bold mb-2">
-                  Unlock Premium AI Dental Care
+                  Unlock Premium AI Health Care
                 </h1>
                 <p className="text-muted-foreground">
                   Get unlimited AI consultations, advanced features, and
-                  priority support to take your dental health to the next level.
+                  priority support to take your health to the next level.
                 </p>
               </div>
             </div>

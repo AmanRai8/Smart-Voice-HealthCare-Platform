@@ -1,8 +1,8 @@
-# 🦷 Dental AI Assistant
+# 🩺 Smart Voice HealthCare Platform
 
-🚧 **Under Development** — actively being built & improved.
+🚧 **Under Development** — actively being built & enhanced.
 
-A modern, full-stack dental appointment and AI-assistant platform built with **Next.js**, **Tailwind CSS**, **TypeScript**, **Prisma**, **PostgreSQL (Neon)**, **Clerk**, **Vapi**, and more.
+A modern, full-stack **voice-enabled healthcare platform** designed to streamline appointments and deliver an intelligent AI assistant experience. The platform focuses on improving patient interaction through voice-based assistance and smart healthcare workflows.
 
 ---
 
@@ -12,7 +12,7 @@ A modern, full-stack dental appointment and AI-assistant platform built with **N
 - 🔐 **Authentication via Clerk** (Google, GitHub, Email & Password)
 - 🔑 **Email Verification** (6-digit OTP)
 - 📅 **Appointment Booking System**
-- 🦷 **3-Step Booking Flow** (Dentist → Service & Time → Confirm)
+- 🦷 **3-Step Booking Flow** (Doctor → Service & Time → Confirm)
 - 📩 **Email Notifications** (Resend)
 - 📊 **Admin Dashboard** for managing appointments
 - 🗣️ **AI Voice Agent** powered by **Vapi**
