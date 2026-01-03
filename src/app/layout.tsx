@@ -16,9 +16,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Dental Assistant",
+  title: "HealthCare Platform",
   description:
-    "Get instant dental advice through voice calls with out AI assistant. Available 24/7.",
+    "Get instant Health Care advice through voice calls with out AI assistant. Available 24/7.",
 };
 
 export default function RootLayout({
