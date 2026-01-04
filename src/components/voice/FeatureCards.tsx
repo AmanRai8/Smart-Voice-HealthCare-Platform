@@ -34,7 +34,7 @@ function FeatureCards() {
           <div className="flex items-start gap-3">
             <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
             <span className="text-sm">
-              Ask questions about dental health and treatments
+              Ask questions about health and treatments
             </span>
           </div>
           <div className="flex items-start gap-3">
@@ -63,7 +63,7 @@ function FeatureCards() {
             Features
           </CardTitle>
           <CardDescription>
-            Advanced capabilities for dental care
+            Advanced capabilities for health care
           </CardDescription>
         </CardHeader>
         <CardContent className="relative space-y-4">

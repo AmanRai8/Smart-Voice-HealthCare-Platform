@@ -44,7 +44,7 @@ function AdminDashboardClient() {
                 Welcome back, {user?.firstName || "Admin"}!
               </h1>
               <p className="text-muted-foreground">
-                Manage doctors, oversee appointments, and monitor your dental
+                Manage doctors, oversee appointments, and monitor your health
                 practice performance.
               </p>
             </div>

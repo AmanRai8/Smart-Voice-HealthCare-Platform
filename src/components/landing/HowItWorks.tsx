@@ -24,12 +24,12 @@ function HowItWorks() {
           </span>
           <br />
           <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-            better dental health
+            better health
           </span>
         </h2>
 
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-          Our streamlined process makes dental care accessible, convenient, and
+          Our streamlined process makes health care accessible, convenient, and
           stress-free for everyone
         </p>
       </div>
@@ -63,9 +63,8 @@ function HowItWorks() {
                 Ask Questions
               </h3>
               <p className="text-muted-foreground text-center leading-relaxed mb-6">
-                Chat with our AI assistant about any dental concerns. Get
-                instant answers about symptoms, treatments, and oral health
-                tips.
+                Chat with our AI assistant about any health concerns. Get
+                instant answers about symptoms, treatments, and health tips.
               </p>
 
               {/* Feature Pills */}
@@ -104,7 +103,7 @@ function HowItWorks() {
               </h3>
               <p className="text-muted-foreground text-center leading-relaxed mb-6">
                 Receive personalized recommendations based on thousands of
-                dental cases. Our AI provides professional-grade insights.
+                health cases. Our AI provides professional-grade insights.
               </p>
 
               {/* Feature Pills */}

@@ -14,10 +14,12 @@ function Footer() {
                 height={32}
                 className="w-8 h-8"
               />
-              <span className="font-semibold text-lg">DentWise</span>
+              <span className="font-semibold text-lg">
+                Smart Voice Health Care Platform
+              </span>
             </div>
             <p className="text-sm text-muted-foreground">
-              AI-powered dental assistance that actually helps.
+              AI-powered health assistance that actually helps.
             </p>
           </div>
 
@@ -25,17 +27,17 @@ function Footer() {
             <h4 className="font-medium mb-3">Product</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
-                <a href="#" className="hover:text-foreground">
+                <a href="#how-it-works" className="hover:text-foreground">
                   How it works
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-foreground">
+                <a href="#pricing" className="hover:text-foreground">
                   Pricing
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-foreground">
+                <a href="#about" className="hover:text-foreground">
                   FAQ
                 </a>
               </li>
@@ -87,8 +89,8 @@ function Footer() {
 
         <div className="border-t mt-8 pt-8 text-center text-sm text-muted-foreground">
           <p>
-            &copy; 2024 DentWise. Built for real people with real dental
-            questions.
+            &copy; 2024 HealthCare Platform. Built for real people with real
+            health questions.
           </p>
         </div>
       </div>

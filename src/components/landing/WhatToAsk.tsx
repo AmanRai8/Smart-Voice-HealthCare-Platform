@@ -22,12 +22,12 @@ function WhatToAsk() {
             </span>
             <br />
             <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-              anything dental
+              anything health related
             </span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             From simple questions to complex concerns, our AI delivers
-            expert-level guidance trained on thousands of real dental cases
+            expert-level guidance trained on thousands of real health cases
           </p>
         </div>
 
