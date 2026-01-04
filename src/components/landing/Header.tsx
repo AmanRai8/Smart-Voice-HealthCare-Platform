@@ -16,7 +16,7 @@ function Header() {
             className="w-11"
           />
           <span className="font-semibold text-lg">
-            AI Voice Dental Platform
+            Smart Voice Health Care Platform
           </span>
         </Link>
 

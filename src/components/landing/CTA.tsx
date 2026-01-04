@@ -22,7 +22,7 @@ function CTA() {
 
               <h2 className="text-3xl md:text-4xl font-bold leading-tight">
                 <span className="bg-gradient-to-br from-foreground to-foreground/70 bg-clip-text text-transparent">
-                  Your dental health
+                  Your health
                 </span>
                 <br />
                 <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">

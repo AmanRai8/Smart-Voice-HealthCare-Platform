@@ -11,16 +11,16 @@ function Hero() {
           {/* LEFT SIDE */}
           <div className="space-y-6">
             <div className="inline-block px-3 py-1 bg-primary/10 rounded-md text-sm text-primary font-medium">
-              AI Dental Assistant
+              AI Health Assistant
             </div>
 
             <h1 className="text-4xl md:text-5xl font-bold">
-              Get instant answers to your dental questions
+              Get instant answers to your health questions
             </h1>
 
             <p className="text-muted-foreground text-lg">
               Our AI assistant provides 24/7 support, smart appointment booking,
-              and personalized dental care advice.
+              and personalized health care advice.
             </p>
 
             <div className="flex gap-3 pt-4">

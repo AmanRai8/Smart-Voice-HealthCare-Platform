@@ -16,9 +16,8 @@ export default async function DashboardPage() {
   if (dbUser?.role === "ADMIN") redirect("/admin");
 
   return (
-    <div>
+    <>
       <Navbar />
-      DASHBOARD
-    </div>
+    </>
   );
 }
