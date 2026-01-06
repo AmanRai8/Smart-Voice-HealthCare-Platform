@@ -55,7 +55,7 @@ function WhatToAsk() {
                       <div className="bg-muted/30 rounded-2xl p-4">
                         <p className="text-sm text-muted-foreground leading-relaxed">
                           Get immediate advice on pain management, possible
-                          causes, and when to see a dentist urgently
+                          causes, and when to see a doctor urgently
                         </p>
                         <div className="flex gap-2 mt-3">
                           <span className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full">
