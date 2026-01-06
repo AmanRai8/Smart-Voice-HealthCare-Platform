@@ -141,7 +141,7 @@ function HowItWorks() {
                 Book & Get Care
               </h3>
               <p className="text-muted-foreground text-center leading-relaxed mb-6">
-                Schedule with verified dentists and receive comprehensive
+                Schedule with verified doctors and receive comprehensive
                 follow-up care. Track your progress seamlessly.
               </p>
 

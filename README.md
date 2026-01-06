@@ -64,7 +64,7 @@ A modern, full-stack **voice-enabled healthcare platform** designed to streamlin
 
 ### **Booking System**
 
-- Dentist selection
+- Doctors selection
 - Service & time selection
 - Real-time availability
 - Confirmation emails
