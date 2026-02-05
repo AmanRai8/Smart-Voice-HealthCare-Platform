@@ -20,6 +20,7 @@ import {
 } from "../ui/select";
 import { Button } from "../ui/button";
 import { formatPhoneNumber } from "@/lib/utils";
+import toast from "react-hot-toast";
 
 interface AddDoctorDialogProps {
   isOpen: boolean;
@@ -43,9 +44,19 @@ function AddDoctorDialog({ isOpen, onClose }: AddDoctorDialogProps) {
     setNewDoctor({ ...newDoctor, phone: formattedPhoneNumber });
   };
 
-  const handleSave = () => {
-    createDoctorMutation.mutate({ ...newDoctor }, { onSuccess: handleClose });
-  };
+const handleSave = () => {
+  toast.promise(
+    createDoctorMutation.mutateAsync({ ...newDoctor }),
+    {
+      loading: "Adding doctor...",
+      success: "Doctor added successfully 🩺",
+      error: "Failed to add doctor",
+    }
+  ).then(() => {
+    handleClose();
+  });
+};
+
 
   const handleClose = () => {
     onClose();
@@ -90,7 +101,7 @@ function AddDoctorDialog({ isOpen, onClose }: AddDoctorDialogProps) {
                 onChange={(e) =>
                   setNewDoctor({ ...newDoctor, speciality: e.target.value })
                 }
-                placeholder="General Dentistry"
+                placeholder="General Doctory"
               />
             </div>
           </div>
@@ -113,7 +124,7 @@ function AddDoctorDialog({ isOpen, onClose }: AddDoctorDialogProps) {
               id="new-phone"
               value={newDoctor.phone}
               onChange={(e) => handlePhoneChange(e.target.value)}
-              placeholder="(555) 123-4567"
+              placeholder="+977 900000000"
             />
           </div>
 

@@ -74,7 +74,7 @@ function CTA() {
 
                 <Image
                   src="/cta.png"
-                  alt="DentWise AI Assistant"
+                  alt="HealthCare AI Assistant"
                   width={300}
                   height={300}
                   className="relative w-80 h-auto drop-shadow-xl hover:scale-105 transition-transform duration-500"

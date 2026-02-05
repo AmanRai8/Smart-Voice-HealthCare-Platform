@@ -172,7 +172,7 @@ function VapiWidget() {
                 <div className="absolute inset-0 bg-gradient-to-b from-primary/10 to-primary/5"></div>
                 <Image
                   src="/logo.png"
-                  alt="AI Dental Assistant"
+                  alt="AI Assistant"
                   width={80}
                   height={80}
                   className="w-20 h-20 object-contain"

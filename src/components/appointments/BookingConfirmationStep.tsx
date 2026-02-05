@@ -74,7 +74,7 @@ function BookingConfirmationStep({
             </div>
             <div>
               <p className="text-sm text-muted-foreground">Location</p>
-              <p className="font-medium">Dental Center</p>
+              <p className="font-medium">HealthCare Center</p>
             </div>
             <div>
               <p className="text-sm text-muted-foreground">Cost</p>
