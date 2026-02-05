@@ -1,4 +1,4 @@
-import { useGetDoctors } from "@/hooks/use-doctors";
+import { useGetDoctors, useDeleteDoctor } from "@/hooks/use-doctors";
 import { useState } from "react";
 import {
   Card,
@@ -13,23 +13,44 @@ import {
   PhoneIcon,
   PlusIcon,
   StethoscopeIcon,
+  TrashIcon,
 } from "lucide-react";
 import { Button } from "../ui/button";
 import Image from "next/image";
 import { Badge } from "../ui/badge";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "../ui/alert-dialog";
+import toast from "react-hot-toast";
+
 
 import { Doctor } from "@prisma/client";
 import AddDoctorDialog from "./AddDoctorDialog";
 import EditDoctorDialog from "./EditDoctorDialog";
 
+// Type for doctor with appointment count
+type DoctorWithCount = Doctor & {
+  appointmentCount: number;
+};
+
 function DoctorsManagement() {
   const { data: doctors = [] } = useGetDoctors();
+  const { mutate: deleteDoctor, isPending: isDeleting } = useDeleteDoctor();
 
   const [isAddDialogOpen, setIsAddDialogOpen] = useState(false);
   const [isEditDialogOpen, setIsEditDialogOpen] = useState(false);
-  const [selectedDoctor, setSelectedDoctor] = useState<Doctor | null>(null);
+  const [selectedDoctor, setSelectedDoctor] = useState<DoctorWithCount | null>(null);
+  const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
+  const [doctorToDelete, setDoctorToDelete] = useState<DoctorWithCount | null>(null);
 
-  const handleEditDoctor = (doctor: Doctor) => {
+  const handleEditDoctor = (doctor: DoctorWithCount) => {
     setSelectedDoctor(doctor);
     setIsEditDialogOpen(true);
   };
@@ -37,6 +58,26 @@ function DoctorsManagement() {
   const handleCloseEditDialog = () => {
     setIsEditDialogOpen(false);
     setSelectedDoctor(null);
+  };
+
+  const handleDeleteClick = (doctor: DoctorWithCount) => {
+    setDoctorToDelete(doctor);
+    setDeleteDialogOpen(true);
+  };
+
+  const handleConfirmDelete = () => {
+    if (!doctorToDelete) return;
+
+    deleteDoctor(doctorToDelete.id, {
+      onSuccess: () => {
+        toast.success("Doctor deleted successfully");
+        setDeleteDialogOpen(false);
+        setDoctorToDelete(null);
+      },
+      onError: (error: any) => {
+        toast.error("Failed to delete doctor");
+      },
+    });
   };
 
   return (
@@ -127,6 +168,16 @@ function DoctorsManagement() {
                     <EditIcon className="size-4 mr-1" />
                     Edit
                   </Button>
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    className="h-8 px-3 text-destructive hover:text-destructive hover:bg-destructive/10"
+                    onClick={() => handleDeleteClick(doctor)}
+                    disabled={isDeleting}
+                  >
+                    <TrashIcon className="size-4 mr-1" />
+                    Delete
+                  </Button>
                 </div>
               </div>
             ))}
@@ -140,11 +191,39 @@ function DoctorsManagement() {
       />
 
       <EditDoctorDialog
-        key={selectedDoctor?.id} // advanced react
+        key={selectedDoctor?.id}
         isOpen={isEditDialogOpen}
         onClose={handleCloseEditDialog}
         doctor={selectedDoctor}
       />
+
+      <AlertDialog open={deleteDialogOpen} onOpenChange={setDeleteDialogOpen}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+            <AlertDialogDescription>
+              This will permanently delete Dr. {doctorToDelete?.name}.
+              {doctorToDelete && doctorToDelete.appointmentCount > 0 && (
+                <span className="block mt-2 text-destructive font-medium">
+                  Warning: This doctor has {doctorToDelete.appointmentCount}{" "}
+                  appointment(s). Consider deactivating instead.
+                </span>
+              )}
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel onClick={() => setDoctorToDelete(null)}>
+              Cancel
+            </AlertDialogCancel>
+            <AlertDialogAction
+              onClick={handleConfirmDelete}
+              className="bg-destructive hover:bg-destructive/90"
+            >
+              Delete
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </>
   );
 }

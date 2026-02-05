@@ -31,7 +31,7 @@ function AppointmentConfirmationEmail({
   return (
     <Html>
       <Head />
-      <Preview>Your dental appointment has been confirmed</Preview>
+      <Preview>Your healthcare appointment has been confirmed</Preview>
       <Body style={main}>
         <Container style={container}>
           <Section style={logoContainer}>
@@ -39,10 +39,10 @@ function AppointmentConfirmationEmail({
               src="https://i.ibb.co.com/tRy6cC2/logo.png"
               width="50"
               height="50"
-              alt="DentWise"
+              alt="HealthCare Logo"
               style={logo}
             />
-            <Text style={logoText}>DentWise</Text>
+            <Text style={logoText}>HealthCare </Text>
           </Section>
 
           <Heading style={h1}>Appointment Confirmed! 🦷</Heading>
@@ -50,7 +50,7 @@ function AppointmentConfirmationEmail({
           <Text style={text}>Hi there,</Text>
 
           <Text style={text}>
-            Your dental appointment has been successfully booked. Here are the details:
+            Your healthcare appointment has been successfully booked. Here are the details:
           </Text>
 
           <Section style={appointmentDetails}>
@@ -73,7 +73,7 @@ function AppointmentConfirmationEmail({
             <Text style={detailValue}>{price}</Text>
 
             <Text style={detailLabel}>Location</Text>
-            <Text style={detailValue}>Dental Center</Text>
+            <Text style={detailValue}>HealthCare Center</Text>
           </Section>
 
           <Text style={text}>
@@ -90,11 +90,11 @@ function AppointmentConfirmationEmail({
           <Text style={footer}>
             Best regards,
             <br />
-            The DentWise Team
+            The HealthCare Team
           </Text>
 
           <Text style={footerText}>
-            If you have any questions, please contact us at support@dentwise.com
+            If you have any questions, please contact us at support@healthcare.com
           </Text>
         </Container>
       </Body>
@@ -103,8 +103,7 @@ function AppointmentConfirmationEmail({
 }
 
 export default AppointmentConfirmationEmail;
-
-// 🤡🤡🤡🤡🤡 styles that were generated using AI 🤡🤡🤡🤡🤡
+ 
 const main = {
   backgroundColor: "#ffffff",
   fontFamily:

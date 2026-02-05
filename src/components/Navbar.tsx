@@ -18,7 +18,7 @@ function Navbar() {
           <Link href="/dashboard" className="flex items-center gap-2">
             <Image
               src="/logo.png"
-              alt="DentWise Logo"
+              alt="healthcare Logo"
               width={32}
               height={32}
               className="w-11"

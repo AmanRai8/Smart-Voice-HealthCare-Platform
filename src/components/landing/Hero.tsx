@@ -45,7 +45,7 @@ function Hero() {
             <div className="absolute inset-0 bg-primary/5 rounded-3xl -rotate-3"></div>
             <Image
               src={"/hero.png"}
-              alt="DentWise AI"
+              alt="HealthCare AI Assistant"
               width={600}
               height={600}
               className="relative w-full h-auto rounded-2xl"

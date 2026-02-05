@@ -13,12 +13,11 @@ import { useState } from "react";
 import { toast } from "sonner";
 
 function AppointmentsPage() {
-  // state management for the booking process - this could be done with something like Zustand for larger apps
   const [selectedDentistId, setSelectedDentistId] = useState<string | null>(null);
   const [selectedDate, setSelectedDate] = useState("");
   const [selectedTime, setSelectedTime] = useState("");
   const [selectedType, setSelectedType] = useState("");
-  const [currentStep, setCurrentStep] = useState(1); // 1: select dentist, 2: select time, 3: confirm
+  const [currentStep, setCurrentStep] = useState(1); 
   const [showConfirmationModal, setShowConfirmationModal] = useState(false);
   const [bookedAppointment, setBookedAppointment] = useState<any>(null);
 
@@ -28,7 +27,6 @@ function AppointmentsPage() {
   const handleSelectDentist = (dentistId: string) => {
     setSelectedDentistId(dentistId);
 
-    // reset the state when dentist changes
     setSelectedDate("");
     setSelectedTime("");
     setSelectedType("");
@@ -51,7 +49,6 @@ function AppointmentsPage() {
       },
       {
         onSuccess: async (appointment) => {
-          // store the appointment details to show in the modal
           setBookedAppointment(appointment);
 
           try {
@@ -99,7 +96,7 @@ function AppointmentsPage() {
         {/* header */}
         <div className="mb-8">
           <h1 className="text-3xl font-bold mb-2">Book an Appointment</h1>
-          <p className="text-muted-foreground">Find and book with verified dentists in your area</p>
+          <p className="text-muted-foreground">Find and book with verified doctor available</p>
         </div>
 
         <ProgressSteps currentStep={currentStep} />

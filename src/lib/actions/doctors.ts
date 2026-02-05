@@ -129,3 +129,34 @@ export async function getAvailableDoctors() {
     throw new Error("Failed to fetch available doctors");
   }
 }
+export async function deleteDoctor(id: string) {
+  try {
+    // Check if doctor has appointments
+    const doctor = await prisma.doctor.findUnique({
+      where: { id },
+      include: {
+        _count: { select: { appointments: true } },
+      },
+    });
+
+    if (!doctor) throw new Error("Doctor not found");
+
+    // Prevent deletion if doctor has appointments
+    if (doctor._count.appointments > 0) {
+      throw new Error(
+        "Cannot delete doctor with existing appointments. Please deactivate instead."
+      );
+    }
+
+    await prisma.doctor.delete({
+      where: { id },
+    });
+
+    revalidatePath("/admin");
+
+    return { success: true };
+  } catch (error: any) {
+    console.error("Error deleting doctor:", error);
+    throw error;
+  }
+}
