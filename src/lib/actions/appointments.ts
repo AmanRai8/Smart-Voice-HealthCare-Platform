@@ -53,8 +53,22 @@ export async function getUserAppointments() {
         "User not found. Please ensure your account is properly set up."
       );
 
+    // Get current date and time for filtering
+    const now = new Date();
+    const currentDate = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
     const appointments = await prisma.appointment.findMany({
-      where: { userId: user.id },
+      where: { 
+        userId: user.id,
+        // Only get appointments that are not completed
+        status: {
+          not: "COMPLETED"
+        },
+        // Additionally, only get future appointments or today's appointments
+        date: {
+          gte: currentDate
+        }
+      },
       include: {
         user: { select: { firstName: true, lastName: true, email: true } },
         doctor: { select: { name: true, imageUrl: true } },
