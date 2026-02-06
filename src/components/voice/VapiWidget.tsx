@@ -170,13 +170,13 @@ function VapiWidget() {
 
               <div className="relative w-full h-full rounded-full bg-card flex items-center justify-center border border-border overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-b from-primary/10 to-primary/5"></div>
-                <Image
-                  src="/logo.png"
-                  alt="AI Assistant"
-                  width={80}
-                  height={80}
-                  className="w-20 h-20 object-contain"
-                />
+                <span
+    className="text-4xl"
+    role="img"
+    aria-label="HealthCare Logo"
+  >
+    🩺
+  </span>
               </div>
             </div>
 
