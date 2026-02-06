@@ -66,18 +66,28 @@ export const getAvailableTimeSlots = () => {
 };
 
 export const APPOINTMENT_TYPES = [
-  { id: "checkup", name: "Regular Checkup", duration: "60 min", price: "$120" },
-  { id: "cleaning", name: "Teeth Cleaning", duration: "45 min", price: "$90" },
+  {
+    id: "general",
+    name: "General Appointment",
+    duration: "60 min",
+    price: "Rs. 100",
+  },
   {
     id: "consultation",
     name: "Consultation",
     duration: "30 min",
-    price: "$75",
+    price: "Rs. 75",
+  },
+  {
+    id: "follow_up",
+    name: "Follow-up Visit",
+    duration: "20 min",
+    price: "Rs. 50",
   },
   {
     id: "emergency",
     name: "Emergency Visit",
     duration: "30 min",
-    price: "$150",
+    price: "Rs. 150",
   },
 ];
