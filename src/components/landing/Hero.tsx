@@ -44,7 +44,7 @@ function Hero() {
           <div className="relative">
             <div className="absolute inset-0 bg-primary/5 rounded-3xl -rotate-3"></div>
             <Image
-              src={"/hero.png"}
+              src={"/Hero1.png"}
               alt="HealthCare AI Assistant"
               width={600}
               height={600}
