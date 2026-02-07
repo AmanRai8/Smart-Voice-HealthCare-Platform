@@ -49,20 +49,20 @@ function WhatToAsk() {
                     <div className="space-y-3 flex-1">
                       <div className="bg-primary/5 rounded-2xl p-4 border border-primary/10">
                         <p className="font-semibold text-primary">
-                          "My tooth hurts when I bite down"
+                          "I have pain and discomfort that won’t go away"
                         </p>
                       </div>
                       <div className="bg-muted/30 rounded-2xl p-4">
                         <p className="text-sm text-muted-foreground leading-relaxed">
-                          Get immediate advice on pain management, possible
-                          causes, and when to see a doctor urgently
+                          Get instant guidance on possible causes, home care
+                          tips, and whether you should see a doctor urgently
                         </p>
                         <div className="flex gap-2 mt-3">
                           <span className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full">
-                            Instant Response
+                            Symptom Check
                           </span>
                           <span className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full">
-                            Pain Relief
+                            Urgent Care
                           </span>
                         </div>
                       </div>
@@ -81,52 +81,20 @@ function WhatToAsk() {
                     <div className="space-y-3 flex-1">
                       <div className="bg-primary/5 rounded-2xl p-4 border border-primary/10">
                         <p className="font-semibold text-primary">
-                          "How much does teeth whitening cost?"
+                          "How much does treatment usually cost?"
                         </p>
                       </div>
                       <div className="bg-muted/30 rounded-2xl p-4">
                         <p className="text-sm text-muted-foreground leading-relaxed">
-                          Compare treatment options, pricing ranges, and find
-                          the best whitening solution for your budget
+                          Explore treatment options, expected costs, and find
+                          care that fits your health needs and budget
                         </p>
                         <div className="flex gap-2 mt-3">
                           <span className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full">
-                            Cost Analysis
+                            Cost Estimates
                           </span>
                           <span className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full">
-                            Treatment Options
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Chat Bubble 3 */}
-              <div className="group relative">
-                <div className="bg-gradient-to-br from-card/90 to-card/60 backdrop-blur-xl rounded-3xl p-6 border border-border/50 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-primary/10 rounded-2xl flex items-center justify-center shrink-0">
-                      <MessageSquareIcon className="h-6 w-6 text-primary" />
-                    </div>
-                    <div className="space-y-3 flex-1">
-                      <div className="bg-primary/5 rounded-2xl p-4 border border-primary/10">
-                        <p className="font-semibold text-primary">
-                          "When should I replace my filling?"
-                        </p>
-                      </div>
-                      <div className="bg-muted/30 rounded-2xl p-4">
-                        <p className="text-sm text-muted-foreground leading-relaxed">
-                          Learn about filling lifespan, warning signs of wear,
-                          and replacement timing guidance
-                        </p>
-                        <div className="flex gap-2 mt-3">
-                          <span className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full">
-                            Preventive Care
-                          </span>
-                          <span className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full">
-                            Maintenance
+                            Care Options
                           </span>
                         </div>
                       </div>
@@ -141,7 +109,7 @@ function WhatToAsk() {
           <div className="bg-gradient-to-br from-card/90 to-card/60 backdrop-blur-xl rounded-3xl p-8 border border-border/50 hover:border-primary/30 transition-all duration-500">
             <div className="flex items-center justify-center h-full">
               <Image
-                src="/confused.png"
+                src="/WTA.png"
                 alt="AI Assistant"
                 width={500}
                 height={500}
