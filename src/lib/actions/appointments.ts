@@ -1,6 +1,6 @@
 "use server";
 
-import { auth } from "@clerk/nextjs/server";
+import { auth, currentUser } from "@clerk/nextjs/server";
 import { prisma } from "../prisma";
 import { AppointmentStatus } from "@prisma/client";
 
@@ -15,6 +15,42 @@ function transformAppointment(appointment: any) {
     doctorImageUrl: appointment.doctor.imageUrl || "",
     date: appointment.date.toISOString().split("T")[0],
   };
+}
+
+// Helper function to ensure user exists in database
+async function ensureUserExists(clerkId: string) {
+  try {
+    // Get user info from Clerk
+    const clerkUser = await currentUser();
+
+    if (!clerkUser) throw new Error("Not authenticated");
+
+    // Use upsert to create or update user atomically
+    const user = await prisma.user.upsert({
+      where: { clerkId: clerkUser.id },
+      update: {
+        // Update existing user with latest info from Clerk
+        email: clerkUser.emailAddresses[0].emailAddress,
+        firstName: clerkUser.firstName || "",
+        lastName: clerkUser.lastName || "",
+        phone: clerkUser.phoneNumbers?.[0]?.phoneNumber || "",
+      },
+      create: {
+        // Create new user if doesn't exist
+        clerkId: clerkUser.id,
+        email: clerkUser.emailAddresses[0].emailAddress,
+        firstName: clerkUser.firstName || "",
+        lastName: clerkUser.lastName || "",
+        phone: clerkUser.phoneNumbers?.[0]?.phoneNumber || "",
+        role: "USER",
+      },
+    });
+
+    return user;
+  } catch (error) {
+    console.error("Error ensuring user exists:", error);
+    throw error;
+  }
 }
 
 export async function getAppointments() {
@@ -46,28 +82,28 @@ export async function getUserAppointments() {
     const { userId } = await auth();
     if (!userId) throw new Error("You must be logged in to view appointments");
 
-    // find user by clerkId from authenticated session
-    const user = await prisma.user.findUnique({ where: { clerkId: userId } });
-    if (!user)
-      throw new Error(
-        "User not found. Please ensure your account is properly set up."
-      );
+    // Ensure user exists in database (auto-create if needed)
+    const user = await ensureUserExists(userId);
 
     // Get current date and time for filtering
     const now = new Date();
-    const currentDate = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    const currentDate = new Date(
+      now.getFullYear(),
+      now.getMonth(),
+      now.getDate()
+    );
 
     const appointments = await prisma.appointment.findMany({
-      where: { 
+      where: {
         userId: user.id,
         // Only get appointments that are not completed
         status: {
-          not: "COMPLETED"
+          not: "COMPLETED",
         },
         // Additionally, only get future appointments or today's appointments
         date: {
-          gte: currentDate
-        }
+          gte: currentDate,
+        },
       },
       include: {
         user: { select: { firstName: true, lastName: true, email: true } },
@@ -88,9 +124,8 @@ export async function getUserAppointmentStats() {
     const { userId } = await auth();
     if (!userId) throw new Error("You must be authenticated");
 
-    const user = await prisma.user.findUnique({ where: { clerkId: userId } });
-
-    if (!user) throw new Error("User not found");
+    // Ensure user exists in database (auto-create if needed)
+    const user = await ensureUserExists(userId);
 
     // these calls will run in parallel, instead of waiting each other
     const [totalCount, completedCount] = await Promise.all([
@@ -152,11 +187,8 @@ export async function bookAppointment(input: BookAppointmentInput) {
       throw new Error("Doctor, date, and time are required");
     }
 
-    const user = await prisma.user.findUnique({ where: { clerkId: userId } });
-    if (!user)
-      throw new Error(
-        "User not found. Please ensure your account is properly set up."
-      );
+    // Ensure user exists in database (auto-create if needed)
+    const user = await ensureUserExists(userId);
 
     const appointment = await prisma.appointment.create({
       data: {
