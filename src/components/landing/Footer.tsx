@@ -48,17 +48,17 @@ function Footer() {
             <h4 className="font-medium mb-3">Support</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
-                <a href="#" className="hover:text-foreground">
+                <a href="/help" className="hover:text-foreground">
                   Help center
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-foreground">
+                <a href="/contact" className="hover:text-foreground">
                   Contact us
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-foreground">
+                <a href="/status" className="hover:text-foreground">
                   Status
                 </a>
               </li>
@@ -69,17 +69,17 @@ function Footer() {
             <h4 className="font-medium mb-3">Legal</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
-                <a href="#" className="hover:text-foreground">
+                <a href="/privacy" className="hover:text-foreground">
                   Privacy
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-foreground">
+                <a href="/terms" className="hover:text-foreground">
                   Terms
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-foreground">
+                <a href="/security" className="hover:text-foreground">
                   Security
                 </a>
               </li>
