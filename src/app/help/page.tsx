@@ -213,6 +213,7 @@ export default function HelpCenter() {
                       className="bg-gradient-to-br from-card/90 to-card/60 backdrop-blur-xl rounded-2xl border border-border/50 overflow-hidden"
                     >
                       <button
+                        type="button"
                         onClick={() => toggleFaq(globalIndex)}
                         className="w-full p-6 text-left flex items-center justify-between hover:bg-muted/30 transition"
                       >
