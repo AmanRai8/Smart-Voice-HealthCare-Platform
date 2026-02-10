@@ -23,7 +23,7 @@ export async function POST(request: Request) {
 
     // send the email
     const { data, error } = await resend.emails.send({
-      from: "HealthCare <no-reply@resend.dev>",
+      from: "HealthCare Appointments <onboarding@resend.dev>",
       to: [userEmail],
       subject: "Appointment Confirmation - HealthCare",
       react: AppointmentConfirmationEmail({
