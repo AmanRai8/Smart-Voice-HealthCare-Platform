@@ -175,6 +175,7 @@ export default function ContactUs() {
                 type="text"
                 name="name"
                 placeholder="Your name"
+                aria-label="Your name"
                 value={formData.name}
                 onChange={handleChange}
                 required
