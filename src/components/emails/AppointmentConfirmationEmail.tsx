@@ -29,76 +29,73 @@ function AppointmentConfirmationEmail({
   price,
 }: AppointmentConfirmationEmailProps) {
   return (
-    <Html>
-      <Head />
-      <Preview>Your healthcare appointment has been confirmed</Preview>
-      <Body style={main}>
-        <Container style={container}>
-          <Section style={logoContainer}>
-            <Img
-              src="https://i.ibb.co.com/tRy6cC2/logo.png"
-              width="50"
-              height="50"
-              alt="HealthCare Logo"
-              style={logo}
-            />
-            <Text style={logoText}>HealthCare </Text>
-          </Section>
+   <Html>
+  <Head />
+  <Preview>Your healthcare appointment has been confirmed</Preview>
+  <Body style={main}>
+    <Container style={container}>
+      {/* Logo with emoji */}
+      <Section style={logoContainer}>
+        <Text style={{ ...logoText, fontSize: "40px", lineHeight: "40px" }}>
+          🩺 HealthCare
+        </Text>
+      </Section>
 
-          <Heading style={h1}>Appointment Confirmed! 🦷</Heading>
+      <Heading style={h1}>Appointment Confirmed! 🦷</Heading>
 
-          <Text style={text}>Hi there,</Text>
+      <Text style={text}>Hi there,</Text>
 
-          <Text style={text}>
-            Your healthcare appointment has been successfully booked. Here are the details:
-          </Text>
+      <Text style={text}>
+        Your healthcare appointment has been successfully booked. Here are the details:
+      </Text>
 
-          <Section style={appointmentDetails}>
-            <Text style={detailLabel}>Doctor</Text>
-            <Text style={detailValue}>{doctorName}</Text>
+      <Section style={appointmentDetails}>
+        <Text style={detailLabel}>Doctor</Text>
+        <Text style={detailValue}>{doctorName}</Text>
 
-            <Text style={detailLabel}>Appointment Type</Text>
-            <Text style={detailValue}>{appointmentType}</Text>
+        <Text style={detailLabel}>Appointment Type</Text>
+        <Text style={detailValue}>{appointmentType}</Text>
 
-            <Text style={detailLabel}>Date</Text>
-            <Text style={detailValue}>{appointmentDate}</Text>
+        <Text style={detailLabel}>Date</Text>
+        <Text style={detailValue}>{appointmentDate}</Text>
 
-            <Text style={detailLabel}>Time</Text>
-            <Text style={detailValue}>{appointmentTime}</Text>
+        <Text style={detailLabel}>Time</Text>
+        <Text style={detailValue}>{appointmentTime}</Text>
 
-            <Text style={detailLabel}>Duration</Text>
-            <Text style={detailValue}>{duration}</Text>
+        <Text style={detailLabel}>Duration</Text>
+        <Text style={detailValue}>{duration}</Text>
 
-            <Text style={detailLabel}>Cost</Text>
-            <Text style={detailValue}>{price}</Text>
+        <Text style={detailLabel}>Cost</Text>
+        <Text style={detailValue}>{price}</Text>
 
-            <Text style={detailLabel}>Location</Text>
-            <Text style={detailValue}>HealthCare Center</Text>
-          </Section>
+        <Text style={detailLabel}>Location</Text>
+        <Text style={detailValue}>HealthCare Center</Text>
+      </Section>
 
-          <Text style={text}>
-            Please arrive 15 minutes early for your appointment. If you need to reschedule or
-            cancel, please contact us at least 24 hours in advance.
-          </Text>
+      <Text style={text}>
+        Please arrive 15 minutes early for your appointment. If you need to reschedule or
+        cancel, please contact us at least 24 hours in advance.
+      </Text>
 
-          <Section style={buttonContainer}>
-            <Link style={button} href={process.env.NEXT_PUBLIC_APP_URL + "/appointments"}>
-              View My Appointments
-            </Link>
-          </Section>
+      <Section style={buttonContainer}>
+        <Link style={button} href={process.env.NEXT_PUBLIC_APP_URL + "/appointments"}>
+          View My Appointments
+        </Link>
+      </Section>
 
-          <Text style={footer}>
-            Best regards,
-            <br />
-            The HealthCare Team
-          </Text>
+      <Text style={footer}>
+        Best regards,
+        <br />
+        The HealthCare Team
+      </Text>
 
-          <Text style={footerText}>
-            If you have any questions, please contact us at support@healthcare.com
-          </Text>
-        </Container>
-      </Body>
-    </Html>
+      <Text style={footerText}>
+        If you have any questions, please contact us at support@healthcare.com
+      </Text>
+    </Container>
+  </Body>
+</Html>
+
   );
 }
 
