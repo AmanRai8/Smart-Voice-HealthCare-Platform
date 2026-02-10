@@ -207,7 +207,7 @@ function WhatToAsk() {
                 </Link>
 
                 {/* Help Center Card */}
-                <Link href="/help-center">
+                <Link href="/help">
                   <div className="group bg-gradient-to-br from-card/90 to-card/60 backdrop-blur-xl rounded-2xl p-6 border border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1 cursor-pointer h-full">
                     <div className="flex flex-col items-center text-center gap-4">
                       <div className="p-4 bg-primary/10 rounded-2xl group-hover:bg-primary/20 transition-colors">
