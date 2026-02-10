@@ -37,6 +37,12 @@ function Header() {
           >
             About
           </Link>
+          <Link
+            href="/contact"
+            className="text-muted-foreground hover:text-foreground transition-colors"
+          >
+            Contact
+          </Link>
         </div>
 
         <div className="flex items-center gap-3">
