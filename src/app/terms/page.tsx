@@ -1,8 +1,11 @@
+import Footer from "@/components/landing/Footer";
+import Header from "@/components/landing/Header";
 import { FileText } from "lucide-react";
 
 export default function TermsOfService() {
   return (
-    <div className="min-h-screen bg-background py-20 px-6">
+   <>
+   <Header /> <div className="min-h-screen bg-background py-20 px-6">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
@@ -300,5 +303,6 @@ export default function TermsOfService() {
         </div>
       </div>
     </div>
+   <Footer /></>
   );
 }

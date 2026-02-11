@@ -20,25 +20,26 @@ function Header() {
 
         <div className="hidden md:flex items-center gap-8">
           <Link
-            href="#how-it-works"
+            href="/#how-it-works"
             className="text-muted-foreground hover:text-foreground transition-colors"
           >
             How it Works
           </Link>
+        
           <Link
-            href="#pricing"
+            href="/#about"
+            className="text-muted-foreground hover:text-foreground transition-colors"
+          >
+            About
+          </Link>
+            <Link
+            href="/#pricing"
             className="text-muted-foreground hover:text-foreground transition-colors"
           >
             Pricing
           </Link>
           <Link
-            href="#about"
-            className="text-muted-foreground hover:text-foreground transition-colors"
-          >
-            About
-          </Link>
-          <Link
-            href="/contact"
+            href="/#contact"
             className="text-muted-foreground hover:text-foreground transition-colors"
           >
             Contact

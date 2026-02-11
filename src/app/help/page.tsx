@@ -1,5 +1,7 @@
 "use client";
 
+import Footer from "@/components/landing/Footer";
+import Header from "@/components/landing/Header";
 import { HelpCircle, ChevronDown } from "lucide-react";
 import { useState } from "react";
 
@@ -144,6 +146,8 @@ export default function HelpCenter() {
   ];
 
   return (
+    <>
+    <Header />
     <div className="min-h-screen bg-background py-20 px-6">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
@@ -265,5 +269,7 @@ export default function HelpCenter() {
         </div>
       </div>
     </div>
+    <Footer />
+    </>
   );
 }
