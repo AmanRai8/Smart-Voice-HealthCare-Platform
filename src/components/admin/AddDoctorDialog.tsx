@@ -19,6 +19,7 @@ import {
   SelectValue,
 } from "../ui/select";
 import { Button } from "../ui/button";
+import { Textarea } from "../ui/textarea";
 import { formatPhoneNumber } from "@/lib/utils";
 import toast from "react-hot-toast";
 
@@ -35,6 +36,7 @@ function AddDoctorDialog({ isOpen, onClose }: AddDoctorDialogProps) {
     speciality: "",
     gender: "MALE" as Gender,
     isActive: true,
+    bio: "",
   });
 
   const createDoctorMutation = useCreateDoctor();
@@ -44,19 +46,18 @@ function AddDoctorDialog({ isOpen, onClose }: AddDoctorDialogProps) {
     setNewDoctor({ ...newDoctor, phone: formattedPhoneNumber });
   };
 
-const handleSave = () => {
-  toast.promise(
-    createDoctorMutation.mutateAsync({ ...newDoctor }),
-    {
-      loading: "Adding doctor...",
-      success: "Doctor added successfully 🩺",
-      error: "Failed to add doctor",
-    }
-  ).then(() => {
-    handleClose();
-  });
-};
-
+  const handleSave = () => {
+    toast.promise(
+      createDoctorMutation.mutateAsync({ ...newDoctor }),
+      {
+        loading: "Adding doctor...",
+        success: "Doctor added successfully 🩺",
+        error: "Failed to add doctor",
+      }
+    ).then(() => {
+      handleClose();
+    });
+  };
 
   const handleClose = () => {
     onClose();
@@ -67,6 +68,7 @@ const handleSave = () => {
       speciality: "",
       gender: "MALE",
       isActive: true,
+      bio: "",
     });
   };
 
@@ -125,6 +127,19 @@ const handleSave = () => {
               value={newDoctor.phone}
               onChange={(e) => handlePhoneChange(e.target.value)}
               placeholder="+977 900000000"
+            />
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="new-bio">Bio</Label>
+            <Textarea
+              id="new-bio"
+              value={newDoctor.bio}
+              onChange={(e) =>
+                setNewDoctor({ ...newDoctor, bio: e.target.value })
+              }
+              placeholder="Brief description about the doctor's background and expertise..."
+              rows={3}
             />
           </div>
 
