@@ -19,7 +19,7 @@ function Hero() {
             </h1>
 
             <p className="text-muted-foreground text-lg">
-              Access smart appointment booking, AI voice consultations, subscription management, and automated health care notificationsall in one platform.
+              Access smart appointment booking, AI voice consultations, subscription management, and automated health care notifications — all in one platform.
             </p>
 
             <div className="flex gap-3 pt-4">
