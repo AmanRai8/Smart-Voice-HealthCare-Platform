@@ -234,7 +234,7 @@ export const intents = [
   {
     keywords: ["emergency", "urgent"],
     response:
-      "For medical emergencies, please call 911 immediately. For urgent care, visit our <a href='/urgent-care' class='text-primary underline hover:text-primary/80'>Urgent Care</a> page.",
+      "For medical emergencies, please call 112 (Nepal) immediately. For urgent care, visit our <a href='/urgent-care' class='text-primary underline hover:text-primary/80'>Urgent Care</a> page.",
   },
 
   // Services & Features
