@@ -42,9 +42,9 @@ function Hero() {
 
           {/* RIGHT SIDE */}
           <div className="relative">
-            <div className="absolute inset-0 bg-primary/5 rounded-3xl -rotate-3"></div>
+            <div className="absolute inset-0 bg-primary/5 rounded-3xl "></div>
             <Image
-              src={"/Hero1.png"}
+              src={"/Hero2.png"}
               alt="HealthCare AI Assistant"
               width={600}
               height={600}

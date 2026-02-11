@@ -31,6 +31,7 @@ interface CreateDoctorInput {
   speciality: string;
   gender: Gender;
   isActive: boolean;
+  bio?: string; 
 }
 
 export async function createDoctor(input: CreateDoctorInput) {
@@ -90,7 +91,6 @@ export async function updateDoctor(input: UpdateDoctorInput) {
 
     const doctor = await prisma.doctor.update({
       where: { id: input.id },
-      // ...input is going to trigger the unique constraint violation for email
       data: {
         name: input.name,
         email: input.email,
@@ -98,6 +98,7 @@ export async function updateDoctor(input: UpdateDoctorInput) {
         speciality: input.speciality,
         gender: input.gender,
         isActive: input.isActive,
+        bio: input.bio,  
       },
     });
 

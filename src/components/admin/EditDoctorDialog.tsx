@@ -20,6 +20,7 @@ import {
   SelectValue,
 } from "../ui/select";
 import { Button } from "../ui/button";
+import { Textarea } from "../ui/textarea";
 
 interface EditDoctorDialogProps {
   isOpen: boolean;
@@ -110,6 +111,19 @@ function EditDoctorDialog({ doctor, isOpen, onClose }: EditDoctorDialogProps) {
                 value={editingDoctor.phone}
                 onChange={(e) => handlePhoneChange(e.target.value)}
                 placeholder="+977 900000000"
+              />
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="bio">Bio</Label>
+              <Textarea
+                id="bio"
+                value={editingDoctor.bio || ""}
+                onChange={(e) =>
+                  setEditingDoctor({ ...editingDoctor, bio: e.target.value })
+                }
+                placeholder="Brief description about the doctor's background and expertise..."
+                rows={3}
               />
             </div>
 

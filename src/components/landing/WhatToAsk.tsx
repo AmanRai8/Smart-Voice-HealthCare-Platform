@@ -142,7 +142,7 @@ function WhatToAsk() {
           <div className="bg-gradient-to-br from-card/90 to-card/60 backdrop-blur-xl rounded-3xl p-8 border border-border/50 hover:border-primary/30 transition-all duration-500 sticky top-8">
             <div className="flex items-center justify-center h-full">
               <Image
-                src="/WTA.png"
+                src="/WTA1.png"
                 alt="AI Assistant"
                 width={500}
                 height={500}
@@ -244,7 +244,7 @@ function WhatToAsk() {
 
               {/* Quick Stats */}
               <div className="mt-10 pt-8 border-t border-border/50">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-6 text-center">
                   <div>
                     <div className="text-3xl font-bold text-primary mb-1">
                       24/7
@@ -263,18 +263,10 @@ function WhatToAsk() {
                   </div>
                   <div>
                     <div className="text-3xl font-bold text-primary mb-1">
-                      98%
+                      100%
                     </div>
                     <div className="text-sm text-muted-foreground">
-                      Satisfaction Rate
-                    </div>
-                  </div>
-                  <div>
-                    <div className="text-3xl font-bold text-primary mb-1">
-                      50+
-                    </div>
-                    <div className="text-sm text-muted-foreground">
-                      Help Articles
+                      Privacy of user data
                     </div>
                   </div>
                 </div>
