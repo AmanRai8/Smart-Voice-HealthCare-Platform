@@ -185,6 +185,7 @@ export default function ContactUs() {
                 type="email"
                 name="email"
                 placeholder="Your email"
+                aria-label="Your email"
                 value={formData.email}
                 onChange={handleChange}
                 required
@@ -194,6 +195,7 @@ export default function ContactUs() {
                 rows={5}
                 name="message"
                 placeholder="Your message"
+                aria-label="Your message"
                 value={formData.message}
                 onChange={handleChange}
                 required
