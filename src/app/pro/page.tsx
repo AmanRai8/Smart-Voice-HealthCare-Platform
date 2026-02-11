@@ -52,8 +52,23 @@ async function ProPage() {
               include secure access and bank-level encryption.
             </p>
           </div>
+<PricingTable
+  appearance={{
+    variables: {
+      // Brand
+      colorPrimary: "var(--primary)",
+      colorText: "var(--foreground)",
+      colorTextSecondary: "var(--muted-foreground)",
+      colorBackground: "var(--card)",
+      colorInputBackground: "var(--input)",
+      borderRadius: "var(--radius)",
+      fontFamily: "var(--font-sans)",
+    },
 
-          <PricingTable />
+  }}
+/>
+
+
         </div>
       </div>
     </>

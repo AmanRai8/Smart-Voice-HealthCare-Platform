@@ -1,6 +1,5 @@
 "use client";
 
-import Header from "@/components/landing/Header";
 import { Mail, Phone, MapPin, MessageSquare, Facebook, Linkedin } from "lucide-react";
 import { useState } from "react";
 import toast from "react-hot-toast";
@@ -62,9 +61,7 @@ export default function ContactUs() {
   };
 
   return (
-   <>
-   <Header />
-    <section className="relative py-20 px-6 bg-background">
+    <section id="contact" className="relative py-20 px-6 bg-background">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
@@ -188,6 +185,7 @@ export default function ContactUs() {
                 type="email"
                 name="email"
                 placeholder="Your email"
+                aria-label="Your email"
                 value={formData.email}
                 onChange={handleChange}
                 required
@@ -197,6 +195,7 @@ export default function ContactUs() {
                 rows={5}
                 name="message"
                 placeholder="Your message"
+                aria-label="Your message"
                 value={formData.message}
                 onChange={handleChange}
                 required
@@ -230,6 +229,5 @@ export default function ContactUs() {
         </div>
       </div>
     </section>
-   </>
   );
 }

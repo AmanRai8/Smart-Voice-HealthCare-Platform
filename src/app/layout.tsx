@@ -29,17 +29,18 @@ export default function RootLayout({
 }) {
   return (
     <TanStackProvider>
-      <ClerkProvider
-        appearance={{
-          variables: {
-            colorPrimary: "#8839ef",
-            colorBackground: "#eff1f5",
-            colorText: "#1d1f23",
-            colorTextSecondary: "#5c5f66",
-            colorInputBackground: "#e6e9f0",
-          },
-        }}
-      >
+ <ClerkProvider
+  appearance={{
+    variables: {
+      colorPrimary: "#F97316",      
+      colorBackground: "#FFF7ED",     
+      colorText: "#1F2937",           
+      colorTextSecondary: "#6B7280",  
+      colorInputBackground: "#FFEDD5",
+    },
+  }}
+>
+
         <html lang="en">
           <body
             className={`${geistSans.variable} ${geistMono.variable} antialiased dark`}

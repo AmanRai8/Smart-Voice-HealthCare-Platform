@@ -1,7 +1,11 @@
+import Footer from "@/components/landing/Footer";
+import Header from "@/components/landing/Header";
 import { Lock, Shield, Key, Server, Eye, FileCheck } from "lucide-react";
 
 export default function Security() {
   return (
+    <>
+    <Header />
     <div className="min-h-screen bg-background py-20 px-6">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
@@ -331,5 +335,6 @@ export default function Security() {
         </div>
       </div>
     </div>
+    <Footer /></>
   );
 }

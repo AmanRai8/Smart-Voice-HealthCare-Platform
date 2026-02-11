@@ -101,7 +101,7 @@ export async function updateDoctor(input: UpdateDoctorInput) {
         bio: input.bio ?? undefined,  
       },
     });
-
+    revalidatePath("/admin");
     return doctor;
   } catch (error) {
     console.error("Error updating doctor:", error);

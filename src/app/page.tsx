@@ -1,3 +1,4 @@
+import ContactUs from "@/components/landing/Contact";
 import CTA from "@/components/landing/CTA";
 import Footer from "@/components/landing/Footer";
 import Header from "@/components/landing/Header";
@@ -20,6 +21,7 @@ export default async function Home() {
       <HowItWorks />
       <WhatToAsk />
       <PricingSection />
+      <ContactUs />
       <Footer />
     </div>
   );

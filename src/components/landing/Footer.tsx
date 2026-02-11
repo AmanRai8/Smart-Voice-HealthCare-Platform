@@ -53,7 +53,7 @@ function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/contact" className="hover:text-foreground">
+                <a href="/#contact" className="hover:text-foreground">
                   Contact us
                 </a>
               </li>
@@ -89,7 +89,7 @@ function Footer() {
 
         <div className="border-t mt-8 pt-8 text-center text-sm text-muted-foreground">
           <p>
-            &copy; 2024 HealthCare Platform. Built for real people with real
+            &copy; 2026 HealthCare Platform. Built for real people with real
             health questions.
           </p>
         </div>
