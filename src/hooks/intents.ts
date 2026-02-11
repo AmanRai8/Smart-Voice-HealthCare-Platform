@@ -14,4 +14,4 @@ export function matchIntent(message: string): string | null {
 
   return bestMatch?.response ?? null;
 }
-}
+
