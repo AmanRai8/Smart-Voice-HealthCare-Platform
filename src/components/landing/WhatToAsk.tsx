@@ -5,7 +5,7 @@ import Link from "next/link";
 function WhatToAsk() {
   return (
     <section
-      id="about"
+      id="what-to-ask"
       className="relative py-32 px-6 overflow-hidden bg-gradient-to-b from-background to-muted/20"
     >
       <div className="relative z-10 max-w-7xl mx-auto">

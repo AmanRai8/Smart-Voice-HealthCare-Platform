@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 function Footer() {
   return (
@@ -6,23 +7,22 @@ function Footer() {
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-4 gap-8">
           <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <span
+    <Link href="/" className="flex items-center gap-2">
+  <span
     className="text-4xl"
     role="img"
     aria-label="HealthCare Logo"
   >
     🩺
   </span>
-              <span className="font-semibold text-lg">
-                Smart Voice Health Care Platform
-              </span>
-            </div>
+  <span className="font-semibold text-lg">
+    SaaS Healthcare Platform
+  </span>
+</Link>
             <p className="text-sm text-muted-foreground">
               AI-powered health assistance that actually helps.
             </p>
           </div>
-
           <div>
             <h4 className="font-medium mb-3">Product</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">

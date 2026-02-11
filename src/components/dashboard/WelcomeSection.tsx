@@ -31,15 +31,21 @@ export default async function WelcomeSection() {
         </div>
       </div>
 
-      <div className="lg:flex hidden items-center justify-center size-32 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full ">
-        <Image
-          src="/logo.png"
-          alt="HealthCare Logo"
-          width={64}
-          height={64}
-          className="w-16 h-16"
-        />
-      </div>
+  <div className="lg:flex hidden items-center justify-center size-32 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full overflow-hidden">
+  {user?.imageUrl ? (
+    <Image
+      src={user.imageUrl}
+      alt={user.fullName || "User"}
+      width={128}
+      height={128}
+      className="w-full h-full object-cover"
+    />
+  ) : (
+    <span className="text-6xl" role="img" aria-label="User Profile">
+      👤
+    </span>
+  )}
+</div>
     </div>
   );
 }
