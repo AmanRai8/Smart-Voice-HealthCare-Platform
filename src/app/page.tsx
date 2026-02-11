@@ -1,5 +1,5 @@
+import About from "@/components/landing/About";
 import ContactUs from "@/components/landing/Contact";
-import CTA from "@/components/landing/CTA";
 import Footer from "@/components/landing/Footer";
 import Header from "@/components/landing/Header";
 import Hero from "@/components/landing/Hero";
@@ -18,6 +18,7 @@ export default async function Home() {
     <div className="min-h-screen bg-background">
       <Header />
       <Hero />
+      <About />
       <HowItWorks />
       <WhatToAsk />
       <PricingSection />

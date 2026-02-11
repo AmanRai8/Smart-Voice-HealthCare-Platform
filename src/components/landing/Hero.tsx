@@ -1,6 +1,6 @@
 import { SignUpButton } from "@clerk/nextjs";
 import { Button } from "../ui/button";
-import { CalendarIcon, MicIcon } from "lucide-react";
+import { CalendarIcon, CreditCard, MicIcon } from "lucide-react";
 import Image from "next/image";
 
 function Hero() {
@@ -11,30 +11,36 @@ function Hero() {
           {/* LEFT SIDE */}
           <div className="space-y-6">
             <div className="inline-block px-3 py-1 bg-primary/10 rounded-md text-sm text-primary font-medium">
-              AI Health Assistant
+              Complete Health SaaS
             </div>
 
             <h1 className="text-4xl md:text-5xl font-bold">
-              Get instant answers to your health questions
+              Book, Consult & Manage Your Health Effortlessly
             </h1>
 
             <p className="text-muted-foreground text-lg">
-              Our AI assistant provides 24/7 support, smart appointment booking,
-              and personalized health care advice.
+              Access smart appointment booking, AI voice consultations, subscription management, and automated health care notificationsall in one platform.
             </p>
 
             <div className="flex gap-3 pt-4">
               <SignUpButton mode="modal">
                 <Button size={"lg"}>
                   <MicIcon className="mr-2 size-4" />
-                  Start chatting
+                  Book Appointment
+                </Button>
+              </SignUpButton>
+
+              <SignUpButton mode="modal">
+                <Button size="lg" variant="outline">
+                  <CreditCard className="mr-2 size-4" />
+                  Subscribe Now
                 </Button>
               </SignUpButton>
 
               <SignUpButton mode="modal">
                 <Button size={"lg"} variant={"outline"}>
                   <CalendarIcon className="mr-2 size-4" />
-                  Book now
+                  Try AI Agent
                 </Button>
               </SignUpButton>
             </div>

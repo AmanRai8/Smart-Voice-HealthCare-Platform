@@ -1,6 +1,6 @@
 "use client";
 
-import Header from "@/components/landing/Header";
+import Navbar from "@/components/Navbar";
 import { Mail, Phone, MapPin, MessageSquare, Facebook, Linkedin } from "lucide-react";
 import { useState } from "react";
 import toast from "react-hot-toast";
@@ -63,7 +63,7 @@ export default function ContactUs() {
 
   return (
    <>
-   <Header />
+   <Navbar />
     <section className="relative py-20 px-6 bg-background">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
