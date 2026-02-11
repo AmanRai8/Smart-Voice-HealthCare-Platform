@@ -98,7 +98,7 @@ export async function updateDoctor(input: UpdateDoctorInput) {
         speciality: input.speciality,
         gender: input.gender,
         isActive: input.isActive,
-        bio: input.bio,  
+        bio: input.bio ?? undefined,  
       },
     });
 

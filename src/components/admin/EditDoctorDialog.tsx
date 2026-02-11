@@ -43,7 +43,10 @@ function EditDoctorDialog({ doctor, isOpen, onClose }: EditDoctorDialogProps) {
   const handleSave = () => {
     if (editingDoctor) {
       updateDoctorMutation.mutate(
-        { ...editingDoctor },
+        { 
+          ...editingDoctor,
+          bio: editingDoctor.bio || undefined 
+        },
         { onSuccess: handleClose }
       );
     }
