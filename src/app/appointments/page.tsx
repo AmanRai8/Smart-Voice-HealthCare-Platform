@@ -5,14 +5,34 @@ import BookingConfirmationStep from "@/components/appointments/BookingConfirmati
 import DoctorSelectionStep from "@/components/appointments/DoctorSelectionStep";
 import ProgressSteps from "@/components/appointments/ProgressSteps";
 import TimeSelectionStep from "@/components/appointments/TimeSelectionStep";
+import Header from "@/components/landing/Header";
 import Navbar from "@/components/Navbar";
 import { useBookAppointment, useUserAppointments } from "@/hooks/use-appointments";
 import { APPOINTMENT_TYPES } from "@/lib/utils";
+import { SignInButton, useUser } from "@clerk/nextjs";
 import { format } from "date-fns";
 import { useState } from "react";
 import { toast } from "sonner";
 
 function AppointmentsPage() {
+  const { isSignedIn } = useUser(); 
+
+    if (!isSignedIn) {
+    return (<>
+    <Header />
+      <div className="min-h-screen flex flex-col items-center justify-center px-6">
+        <p className="text-lg text-center mb-4">
+          You need to sign in to book or view appointments.
+        </p>
+        <SignInButton>
+          <button className="px-4 py-2 bg-primary text-white rounded-md">
+            Sign In
+          </button>
+        </SignInButton>
+      </div>
+    </>
+    );
+  }
   
   const [selectedDentistId, setSelectedDentistId] = useState<string | null>(null);
   const [selectedDate, setSelectedDate] = useState("");

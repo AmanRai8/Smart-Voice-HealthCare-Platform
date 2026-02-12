@@ -1,11 +1,14 @@
 "use client";
 
+import { useUser } from "@clerk/nextjs";
+import Header from "@/components/landing/Header";
 import Navbar from "@/components/Navbar";
 import { Mail, Phone, MapPin, MessageSquare, Facebook, Linkedin } from "lucide-react";
 import { useState } from "react";
 import toast from "react-hot-toast";
 
 export default function ContactUs() {
+    const { isSignedIn } = useUser();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -63,6 +66,7 @@ export default function ContactUs() {
 
   return (
    <>
+    {isSignedIn ? <Navbar /> : <Header />}
    <Navbar />
     <section className="relative py-20 px-6 bg-background">
       <div className="max-w-6xl mx-auto">

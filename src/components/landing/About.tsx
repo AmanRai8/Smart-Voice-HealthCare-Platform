@@ -36,7 +36,7 @@ export default function AboutSection() {
             <div className="relative">
               <div className="relative w-full max-w-lg mx-auto aspect-[2/3] bg-primary/5 rounded-3xl overflow-hidden shadow-2xl">
                 <Image 
-                  src="/Hero3.png" 
+                  src="/about2.png" 
                   alt="Healthcare innovation" 
                   fill 
                   className="object-cover"
