@@ -234,7 +234,7 @@ export const intents = [
   {
     keywords: ["emergency", "urgent"],
     response:
-      "For medical emergencies, please call 112 (Nepal) immediately. For urgent care, visit our <a href='/urgent-care' class='text-primary underline hover:text-primary/80'>Urgent Care</a> page.",
+      "For medical emergencies, please call 112 (Nepal) immediately. Our platform is not equipped to handle urgent medical situations.",
   },
 
   // Services & Features
@@ -246,7 +246,7 @@ export const intents = [
   {
     keywords: ["location", "address", "directions"],
     response:
-      "Find our locations and get directions on our <a href='/contact' class='text-primary underline hover:text-primary/80'>Locations</a> page.",
+      "Find our locations and get directions on our <a href='#contact' class='text-primary underline hover:text-primary/80'>Locations</a> page.",
   },
   {
     keywords: ["hours", "timing", "open"],
@@ -256,9 +256,9 @@ export const intents = [
   
   // General Information
   {
-    keywords: ["about", "company", "who"],
+    keywords: ["about", "company","services"],
     response:
-      "Learn more about our mission and team on our <a href='/about' class='text-primary underline hover:text-primary/80'>About Us</a> page.",
+      "Learn more about our mission and team on our <a href='#about' class='text-primary underline hover:text-primary/80'>About Us</a> page.",
   },
   {
     keywords: ["privacy", "policy", "terms"],

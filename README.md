@@ -1,27 +1,66 @@
-# 🩺 Smart Voice HealthCare Platform
+# 🩺 SaaS Healthcare Platform
 
-🚧 **Under Development** — actively being built & enhanced.
 
-A modern, full-stack **voice-enabled healthcare platform** designed to streamline appointments and deliver an intelligent AI assistant experience. The platform focuses on improving patient interaction through voice-based assistance and smart healthcare workflows.
+A modern **web-based SaaS healthcare platform** that centralizes healthcare services for patients and administrators. Users can book appointments, manage subscriptions, and interact with an AI voice assistant for healthcare queries.
 
 ---
 
-## ✨ Highlights
+## 🚀 Features
 
-- 🏠 **Modern Landing Page** with gradients & images
-- 🔐 **Authentication via Clerk** (Google, GitHub, Email & Password)
-- 🔑 **Email Verification** (6-digit OTP)
-- 📅 **Appointment Booking System**
-- 🦷 **3-Step Booking Flow** (Doctor → Service & Time → Confirm)
-- 📩 **Email Notifications** (Resend)
-- 📊 **Admin Dashboard** for managing appointments
-- 🗣️ **AI Voice Agent** powered by **Vapi**
-- 💳 **Subscription Payments** via Clerk
-- 🧾 **Automatic Invoices** via email
-- 💸 **Smart Subscription Upgrades**
-- 📂 **PostgreSQL Database** (Neon)
-- 🎨 **Tailwind CSS + Shadcn UI**
-- ⚡ **TanStack Query** for data fetching
+### 1. Modern Landing Page
+- Responsive UI with gradients and professional 3D illustrations.
+- Hero section featuring a friendly 3D healthcare assistant.
+- Informative sections: platform features, subscription plans, and “What to Ask”.
+
+### 2. Authentication & Authorization
+- Sign up / Sign in with Email, Google, or GitHub.
+- Email verification via 6-digit OTP.
+- Role-based access:
+  - **Regular Users:** Book appointments, use AI assistant, view subscriptions.
+  - **Admins:** Full dashboard access to manage users, appointments, and analytics.
+
+### 3. Appointment Booking System
+- 3-step booking flow: Select doctor → Choose service & time → Confirm booking.
+- Confirmation emails sent automatically.
+- Users can view upcoming appointments in their dashboard.
+- Admins can view all appointments in the admin panel.
+
+### 4. AI Voice Agent
+- Interactive AI assistant powered by **Vapi**.
+- Handles queries about:
+  - Appointments
+  - Pricing & subscriptions
+  - Doctors & specialties
+  - Health guidance
+
+### 5. Subscription Management
+- Basic & Premium plans.
+- Automated invoice generation via email.
+- Smart plan upgrades for seamless subscription changes.
+
+### 6. Notifications
+- Email notifications via **Resend** for:
+  - Booking confirmations
+  - Contact inquiries
+  - Subscription updates
+
+### 7. Dashboard
+- Personalized dashboard showing:
+  - Welcome message
+  - Upcoming appointments
+  - Activity overview
+  - Quick access to key actions
+
+### 8. Admin Features
+- Separate admin dashboard for managing:
+  - Users
+  - Appointments
+  - Platform analytics
+
+### 9. Frontend & UI
+- Built with **React**, **Next.js**, **Tailwind CSS**, and **Shadcn UI**.
+- Smooth interactions using **TanStack Query**.
+- Consistent 3D illustration theme for hero, About, and WhatToAsk sections.
 
 ---
 
@@ -51,38 +90,67 @@ A modern, full-stack **voice-enabled healthcare platform** designed to streamlin
 
 ---
 
-## 📅 Features Overview
 
-### **Authentication & Billing (Clerk)**
+## 🎯 Target Users
 
-- OAuth login
-- Email/password
-- OTP verification
-- Subscription system
-- Smart upgrades
-- Auto-generated invoices
-
-### **Booking System**
-
-- Doctors selection
-- Service & time selection
-- Real-time availability
-- Confirmation emails
-- Admin dashboard
-
-### **AI Voice Assistant (Vapi)**
-
-- Voice-based booking
-- AI-powered responses
-- Pro-plan feature
+- Patients / Healthcare consumers
+- Administrators
 
 ---
 
-## 🧰 Database (Neon + Prisma)
+## 🔒 Security
+- Role-based access control ensures data privacy.
+- Secure authentication with Clerk and email verification.
 
-- PostgreSQL on Neon
-- Prisma schema-driven development
-- Automatic migrations
+---
+
+## 📧 Automated Emails
+- Appointment confirmations
+- Subscription invoices
+- Contact inquiries
+
+---
+
+## ⚡ Getting Started
+
+### Prerequisites
+- Node.js >= 18
+- npm or yarn
+- PostgreSQL or Neon database
+- Clerk account for authentication
+- Resend account for email services
+
+### Installation
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/saas-healthcare-platform.git
+cd saas-healthcare-platform
+
+# Install dependencies
+npm install
+
+#Create .env file and add your environment variables
+#Example .env:
+ DATABASE_URL="postgresql://USER:PASSWORD@HOST:PORT/DATABASE?schema=public"
+ CLERK_FRONTEND_API="your_clerk_frontend_api"
+ CLERK_API_KEY="your_clerk_api_key"
+ RESEND_API_KEY="your_resend_api_key"
+ VAPI_API_KEY="your_vapi_api_key"
+ NEXT_PUBLIC_APP_URL="http://localhost:3000"
+
+# Generate Prisma client
+npx prisma generate
+
+# Run database migrations
+npx prisma migrate dev --name init
+
+# Optional: Seed the database
+npm run seed
+
+# Run development server
+npm run dev
+
+```
 
 ---
 

@@ -25,7 +25,7 @@ function Hero() {
             <div className="flex gap-3 pt-4">
               <SignUpButton mode="modal">
                 <Button size={"lg"}>
-                  <MicIcon className="mr-2 size-4" />
+                  <CalendarIcon className="mr-2 size-4" />
                   Book Appointment
                 </Button>
               </SignUpButton>
@@ -39,7 +39,7 @@ function Hero() {
 
               <SignUpButton mode="modal">
                 <Button size={"lg"} variant={"outline"}>
-                  <CalendarIcon className="mr-2 size-4" />
+                  <MicIcon className="mr-2 size-4" />
                   Try AI Agent
                 </Button>
               </SignUpButton>
@@ -50,7 +50,7 @@ function Hero() {
           <div className="relative">
             <div className="absolute inset-0 bg-primary/5 rounded-3xl "></div>
             <Image
-              src={"/Hero2.png"}
+              src={"/hero3.png"}
               alt="HealthCare AI Assistant"
               width={600}
               height={600}
