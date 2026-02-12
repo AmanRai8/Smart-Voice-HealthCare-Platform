@@ -24,7 +24,7 @@ function AppointmentsPage() {
         <p className="text-lg text-center mb-4">
           You need to sign in to book or view appointments.
         </p>
-        <SignInButton>
+        <SignInButton mode="modal">
           <button className="px-4 py-2 bg-primary text-white rounded-md">
             Sign In
           </button>

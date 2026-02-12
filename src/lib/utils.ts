@@ -92,6 +92,31 @@ export const APPOINTMENT_TYPES = [
   },
 ];
 
+export  const emergencyContacts = [
+    { icon: "🚑", label: "Ambulance", number: "102", color: "text-destructive" },
+    { icon: "🚓", label: "Police", number: "100", color: "text-primary" },
+    { icon: "🔥", label: "Fire Brigade", number: "101", color: "text-primary" },
+  ];
+
+export  const urgentSymptoms = [
+    "Severe chest pain or pressure",
+    "Difficulty breathing",
+    "Loss of consciousness",
+    "Uncontrolled bleeding",
+    "Sudden weakness or paralysis",
+    "Seizures or convulsions",
+    "Severe allergic reaction",
+    "Stroke symptoms (FAST: Face, Arms, Speech, Time)",
+  ];
+export const immediateActions = [
+    "Stay calm and ensure personal safety",
+    "Call emergency services immediately",
+    "Do not self-medicate unless advised by professionals",
+    "If trained, provide basic first aid",
+    "Note the time symptoms started",
+    "Gather medical information if possible",
+  ];
+
 export const intents = [
   // Greetings & General Responses
   {
@@ -190,18 +215,19 @@ export const intents = [
   {
     keywords: ["profile", "account", "settings"],
     response:
-      "Manage your profile and account settings in your <a href='/dashboard' class='text-primary underline hover:text-primary/80'>Account Settings</a>.",
+      "Manage your profile and account settings in your <a href='/profile' class='text-primary underline hover:text-primary/80'>Account Settings</a>.",
   },
-  {
-    keywords: ["login", "sign in", "access"],
-    response:
-      "Sign in to your account at the <a href='/' class='text-primary underline hover:text-primary/80'>Login</a> page.",
-  },
-  {
-    keywords: ["register", "sign up", "create account"],
-    response:
-      "Create a new account on our <a href='/' class='text-primary underline hover:text-primary/80'>Registration</a> page.",
-  },
+ {
+  keywords: ["login", "sign in", "access"],
+  response:
+    "Sign in to your account <span data-auth='signin' class='text-primary underline cursor-pointer'>here</span>.",
+},
+{
+  keywords: ["register", "sign up", "create account"],
+  response:
+    "Create a new account <span data-auth='signup' class='text-primary underline cursor-pointer'>here</span>.",
+},
+
 
   // Medical Records & History
   {
@@ -231,11 +257,12 @@ export const intents = [
     response:
       "Find answers to common questions in our <a href='/help' class='text-primary underline hover:text-primary/80'>FAQ</a> section.",
   },
-  {
-    keywords: ["emergency", "urgent"],
-    response:
-      "For medical emergencies, please call 112 (Nepal) immediately. Our platform is not equipped to handle urgent medical situations.",
-  },
+{
+  keywords: ["emergency", "urgent", "help now", "serious"],
+  response:
+    "🚨 If this is a medical emergency, please call emergency services immediately (Nepal: 112). This platform cannot provide emergency care, but your safety comes first. For more emergency information, visit our <a href='/emergency' class='text-primary underline hover:text-primary/80'>Emergency Guidelines</a> page.",
+},
+
 
   // Services & Features
   {

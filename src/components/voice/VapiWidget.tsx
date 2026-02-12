@@ -181,7 +181,7 @@ function VapiWidget() {
             </div>
 
             <h2 className="text-xl font-bold text-foreground">
-              Smart Voice Health Care Platform
+              SaaS Healthcare Platform
             </h2>
             <p className="text-sm text-muted-foreground mt-1">
               Health Care Assistant

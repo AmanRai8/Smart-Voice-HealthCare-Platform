@@ -4,7 +4,6 @@ import { currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 
-import Navbar from "@/components/Navbar";
 import AdminDashboardClient from "./AdminDashboardClient";
 
 async function AdminPage() {
@@ -20,7 +19,6 @@ async function AdminPage() {
 
   return (
     <div>
-      <Navbar />
       <AdminDashboardClient />
     </div>
   );

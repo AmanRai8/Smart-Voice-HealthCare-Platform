@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import { currentUser } from "@clerk/nextjs/server";
+import Link from "next/link";
 
 export default async function WelcomeSection() {
   const user = await currentUser();
@@ -30,22 +31,32 @@ export default async function WelcomeSection() {
           </p>
         </div>
       </div>
+<div className="lg:flex hidden flex-col items-center gap-4">
+  <div className="flex items-center justify-center size-32 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full overflow-hidden">
+    {user?.imageUrl ? (
+      <Image
+        src={user.imageUrl}
+        alt={user.fullName || "User"}
+        width={128}
+        height={128}
+        className="w-full h-full object-cover"
+      />
+    ) : (
+      <span className="text-6xl" role="img" aria-label="User Profile">
+        👤
+      </span>
+    )}
+  </div>
 
-  <div className="lg:flex hidden items-center justify-center size-32 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full overflow-hidden">
-  {user?.imageUrl ? (
-    <Image
-      src={user.imageUrl}
-      alt={user.fullName || "User"}
-      width={128}
-      height={128}
-      className="w-full h-full object-cover"
-    />
-  ) : (
-    <span className="text-6xl" role="img" aria-label="User Profile">
-      👤
-    </span>
-  )}
+  {/* Profile Button */}
+  <Link
+    href="/profile"
+    className="px-4 py-2 rounded-full bg-primary text-white text-sm font-medium hover:opacity-90 transition"
+  >
+    View Profile
+  </Link>
 </div>
+
     </div>
   );
 }
