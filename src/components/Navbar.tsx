@@ -1,7 +1,7 @@
 "use client";
 
 import { UserButton, useUser } from "@clerk/nextjs";
-import { CalendarIcon, Contact, CrownIcon, HomeIcon, MicIcon } from "lucide-react";
+import { AlertTriangle, CalendarIcon, Contact, CrownIcon, HomeIcon, MicIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -82,6 +82,18 @@ function Navbar() {
             >
               <Contact className="w-4 h-4" />
               <span className="hidden md:inline">Contact</span>
+
+            </Link>
+               <Link
+              href="/emergency"
+              className={`flex items-center gap-2 transition-colors hover:text-foreground ${
+                pathname === "/emergency"
+                  ? "text-foreground"
+                  : "text-muted-foreground"
+              }`}
+            >
+              <AlertTriangle className="w-4 h-4" />
+              <span className="hidden md:inline">Emergency</span>
 
             </Link>
           </div>
