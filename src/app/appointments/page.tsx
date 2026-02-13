@@ -21,6 +21,7 @@ import {
 
 import { APPOINTMENT_TYPES, getAvailableTimeSlots, getNext5Days } from "@/lib/utils";
 import { SignInButton, useUser } from "@clerk/nextjs";
+import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog";
 
 function AppointmentsPage() {
   const { isSignedIn } = useUser();
@@ -149,7 +150,7 @@ function AppointmentsPage() {
         <div className="mb-8">
           <h1 className="text-3xl font-bold mb-2">Book an Appointment</h1>
           <p className="text-muted-foreground">
-            Find and book with verified doctor available
+            Find and book with a verified doctor available
           </p>
         </div>
 
@@ -272,23 +273,47 @@ function AppointmentsPage() {
                         Reschedule
                       </button>
 
-                      <button
-                        type="button"
-                        className="flex-1 px-3 py-2 rounded-md bg-red-500 text-white text-sm hover:bg-red-600 disabled:opacity-60"
-                        onClick={() => {
-                          cancelMutation.mutate(
-                            { id: appointment.id },
-                            {
-                              onSuccess: () => toast.success("Appointment cancelled"),
-                              onError: (e: any) =>
-                                toast.error(e?.message ?? "Failed to cancel"),
-                            }
-                          );
-                        }}
-                        disabled={cancelMutation.isPending || rescheduleMutation.isPending}
-                      >
-                        Cancel
-                      </button>
+ <AlertDialog>
+  <AlertDialogTrigger asChild>
+    <button
+      type="button"
+      className="flex-1 px-3 py-2 rounded-md bg-red-500 text-white text-sm hover:bg-red-600 disabled:opacity-60"
+      disabled={cancelMutation.isPending || rescheduleMutation.isPending}
+    >
+      Cancel
+    </button>
+  </AlertDialogTrigger>
+
+  <AlertDialogContent>
+    <AlertDialogHeader>
+      <AlertDialogTitle>Cancel this appointment?</AlertDialogTitle>
+      <AlertDialogDescription>
+        This action cannot be undone. The appointment will be cancelled permanently.
+      </AlertDialogDescription>
+    </AlertDialogHeader>
+
+    <AlertDialogFooter>
+      <AlertDialogCancel>Keep</AlertDialogCancel>
+
+      <AlertDialogAction
+        onClick={() => {
+          cancelMutation.mutate(
+            { id: appointment.id },
+            {
+              onSuccess: () => toast.success("Appointment cancelled"),
+              onError: (e: any) => toast.error(e?.message ?? "Failed to cancel"),
+            }
+          );
+        }}
+        disabled={cancelMutation.isPending || rescheduleMutation.isPending}
+      >
+        Yes, cancel
+      </AlertDialogAction>
+    </AlertDialogFooter>
+  </AlertDialogContent>
+</AlertDialog>
+
+
                     </div>
                   )}
                 </div>

@@ -9,6 +9,7 @@ import {
   useRescheduleAppointment,
 } from "@/hooks/use-appointments";
 import { getNext5Days, getAvailableTimeSlots } from "@/lib/utils";
+import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "../ui/alert-dialog";
 
 export default function NextAppointmentActions({
   appointmentId,
@@ -44,26 +45,45 @@ export default function NextAppointmentActions({
           Reschedule
         </button>
 
-        <button
-          type="button"
-          className="flex-1 px-3 py-2 rounded-md bg-red-500 text-white text-xs sm:text-sm hover:bg-red-600 disabled:opacity-60 transition-colors"
-          onClick={() => {
-            cancelMutation.mutate(
-              { id: appointmentId },
-              {
-                onSuccess: () => {
-                  toast.success("Appointment cancelled");
-                  router.refresh();
-                },
-                onError: (e: any) =>
-                  toast.error(e?.message ?? "Failed to cancel"),
-              }
-            );
-          }}
-          disabled={cancelMutation.isPending || rescheduleMutation.isPending}
-        >
-          Cancel
-        </button>
+       <AlertDialog>
+  <AlertDialogTrigger asChild>
+    <button
+      type="button"
+      className="flex-1 px-3 py-2 rounded-md bg-red-500 text-white text-sm hover:bg-red-600 disabled:opacity-60"
+      disabled={cancelMutation.isPending || rescheduleMutation.isPending}
+    >
+      Cancel
+    </button>
+  </AlertDialogTrigger>
+
+  <AlertDialogContent>
+    <AlertDialogHeader>
+      <AlertDialogTitle>Cancel this appointment?</AlertDialogTitle>
+      <AlertDialogDescription>
+        This action cannot be undone. The appointment will be cancelled permanently.
+      </AlertDialogDescription>
+    </AlertDialogHeader>
+
+    <AlertDialogFooter>
+      <AlertDialogCancel>Keep</AlertDialogCancel>
+
+      <AlertDialogAction
+        onClick={() => {
+          cancelMutation.mutate(
+            { id: appointmentId },
+            {
+              onSuccess: () => toast.success("Appointment cancelled"),
+              onError: (e: any) => toast.error(e?.message ?? "Failed to cancel"),
+            }
+          );
+        }}
+        disabled={cancelMutation.isPending || rescheduleMutation.isPending}
+      >
+        Yes, cancel
+      </AlertDialogAction>
+    </AlertDialogFooter>
+  </AlertDialogContent>
+</AlertDialog>
       </div>
 
       {/* Reschedule Modal */}

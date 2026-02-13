@@ -18,7 +18,7 @@ async function AdminPage() {
   if (!dbUser || dbUser.role !== "ADMIN") redirect("/");
 
   return (
-    <div>
+    <div className="min-h-screen bg-background">
       <AdminDashboardClient />
     </div>
   );
