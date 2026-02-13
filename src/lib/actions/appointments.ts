@@ -256,8 +256,10 @@ export async function cancelAppointment(input: { id: string }) {
       throw new Error("Completed appointments cannot be cancelled");
     }
 
-    // prevent cancelling past appointments (optional)
-    if (appt.date < new Date()) {
+       // prevent cancelling past appointments (optional)
+    const now = new Date();
+    const startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    if (appt.date < startOfToday) {
       throw new Error("Past appointments cannot be cancelled");
     }
 
