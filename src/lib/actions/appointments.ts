@@ -96,11 +96,9 @@ export async function getUserAppointments() {
     const appointments = await prisma.appointment.findMany({
       where: {
         userId: user.id,
-        // Only get appointments that are not completed
-        status: {
-          not: "COMPLETED",
-        },
-        // Additionally, only get future appointments or today's appointments
+       
+      status: { in: ["PENDING", "CONFIRMED"] },
+    
         date: {
           gte: currentDate,
         },
@@ -232,5 +230,104 @@ export async function updateAppointmentStatus(input: {
   } catch (error) {
     console.error("Error updating appointment:", error);
     throw new Error("Failed to update appointment");
+  }
+}
+export async function cancelAppointment(input: { id: string }) {
+  try {
+    const { userId } = await auth();
+    if (!userId) throw new Error("You must be logged in");
+
+    const user = await ensureUserExists(userId);
+
+    // Make sure the appointment belongs to the user (or user is admin)
+    const appt = await prisma.appointment.findUnique({
+      where: { id: input.id },
+      select: { id: true, userId: true, status: true, date: true },
+    });
+
+    if (!appt) throw new Error("Appointment not found");
+
+    const isAdmin = user.role === "ADMIN";
+    const isOwner = appt.userId === user.id;
+    if (!isAdmin && !isOwner) throw new Error("Not allowed");
+
+    // prevent cancelling completed appointments
+    if (appt.status === "COMPLETED") {
+      throw new Error("Completed appointments cannot be cancelled");
+    }
+
+    // prevent cancelling past appointments (optional)
+    if (appt.date < new Date()) {
+      throw new Error("Past appointments cannot be cancelled");
+    }
+
+    const updated = await prisma.appointment.update({
+      where: { id: input.id },
+      data: { status: "CANCELLED" },
+    });
+
+    return updated;
+  } catch (error) {
+    console.error("Error cancelling appointment:", error);
+    throw new Error("Failed to cancel appointment");
+  }
+}
+
+export async function rescheduleAppointment(input: {
+  id: string;
+  date: string; // yyyy-mm-dd
+  time: string;
+}) {
+  try {
+    const { userId } = await auth();
+    if (!userId) throw new Error("You must be logged in");
+
+    const user = await ensureUserExists(userId);
+
+    const appt = await prisma.appointment.findUnique({
+      where: { id: input.id },
+      select: { id: true, userId: true, status: true, doctorId: true },
+    });
+
+    if (!appt) throw new Error("Appointment not found");
+
+    const isAdmin = user.role === "ADMIN";
+    const isOwner = appt.userId === user.id;
+    if (!isAdmin && !isOwner) throw new Error("Not allowed");
+
+    if (appt.status === "COMPLETED") {
+      throw new Error("Completed appointments cannot be rescheduled");
+    }
+    if (appt.status === "CANCELLED") {
+      throw new Error("Cancelled appointments cannot be rescheduled");
+    }
+
+    // Optional: prevent choosing already-booked timeslot
+    const booked = await prisma.appointment.findFirst({
+      where: {
+        doctorId: appt.doctorId,
+        date: new Date(input.date),
+        time: input.time,
+        status: { in: ["CONFIRMED", "COMPLETED"] },
+        NOT: { id: input.id },
+      },
+      select: { id: true },
+    });
+
+    if (booked) throw new Error("This time slot is already booked");
+
+    const updated = await prisma.appointment.update({
+      where: { id: input.id },
+      data: {
+        date: new Date(input.date),
+        time: input.time,
+        status: "CONFIRMED",
+      },
+    });
+
+    return updated;
+  } catch (error) {
+    console.error("Error rescheduling appointment:", error);
+    throw new Error("Failed to reschedule appointment");
   }
 }

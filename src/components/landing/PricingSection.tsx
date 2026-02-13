@@ -6,20 +6,18 @@ function PricingSection() {
   return (
     <section
       id="pricing"
-      className="relative py-32 px-6 overflow-hidden bg-gradient-to-b from-background via-muted/3 to-background"
+      className="relative py-16 sm:py-20 md:py-24 lg:py-32 px-4 sm:px-6 overflow-hidden bg-gradient-to-b from-background via-muted/3 to-background"
     >
-    
-
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-20">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-primary/5 to-primary/10 rounded-full border border-primary/10 backdrop-blur-sm mb-6">
+        <div className="text-center mb-12 sm:mb-16 md:mb-20">
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-primary/5 to-primary/10 rounded-full border border-primary/10 backdrop-blur-sm mb-4 sm:mb-6">
             <span className="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
-            <span className="text-sm font-medium text-primary">
+            <span className="text-xs sm:text-sm font-medium text-primary">
               Simple Pricing
             </span>
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 tracking-tight">
             <span className="bg-gradient-to-br from-foreground to-foreground/70 bg-clip-text text-transparent">
               Choose your
             </span>
@@ -28,48 +26,48 @@ function PricingSection() {
               Plan
             </span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Book appointments for free and upgrade for unlimited AI
             consultations. Perfect for ongoing health care.
           </p>
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
           {/* Free Plan */}
           <div className="relative group">
-            <div className="relative bg-gradient-to-br from-card/90 to-card/60 backdrop-blur-xl rounded-3xl p-8 border border-border/50 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10">
-              <div className="space-y-6">
-                <div className="space-y-3">
-                  <h3 className="text-2xl font-bold">Free</h3>
+            <div className="relative bg-gradient-to-br from-card/90 to-card/60 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-border/50 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10">
+              <div className="space-y-4 sm:space-y-6">
+                <div className="space-y-2 sm:space-y-3">
+                  <h3 className="text-xl sm:text-2xl font-bold">Free</h3>
                   <div className="flex items-end gap-1">
-                    <span className="text-4xl font-bold">$0</span>
-                    <span className="text-muted-foreground mb-1">/month</span>
+                    <span className="text-3xl sm:text-4xl font-bold">$0</span>
+                    <span className="text-muted-foreground mb-1 text-sm sm:text-base">/month</span>
                   </div>
-                  <p className="text-muted-foreground">
+                  <p className="text-muted-foreground text-sm sm:text-base">
                     Essential appointment booking
                   </p>
                 </div>
                 <SignUpButton mode="modal">
-                  <Button className="w-full py-3 bg-gradient-to-r from-muted to-muted/80 text-foreground rounded-xl font-semibold">
+                  <Button className="w-full py-2.5 sm:py-3 bg-gradient-to-r from-muted to-muted/80 text-foreground rounded-xl font-semibold text-sm sm:text-base">
                     Get Started Free
                   </Button>
                 </SignUpButton>
 
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <CheckCircleIcon className="w-5 h-5 text-primary mt-0.5 shrink-0" />
-                    <span className="text-sm">
+                <div className="space-y-3 sm:space-y-4">
+                  <div className="flex items-start gap-2 sm:gap-3">
+                    <CheckCircleIcon className="w-4 h-4 sm:w-5 sm:h-5 text-primary mt-0.5 shrink-0" />
+                    <span className="text-xs sm:text-sm">
                       Unlimited appointment booking
                     </span>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircleIcon className="w-5 h-5 text-primary mt-0.5 shrink-0" />
-                    <span className="text-sm">Find doctors in your area</span>
+                  <div className="flex items-start gap-2 sm:gap-3">
+                    <CheckCircleIcon className="w-4 h-4 sm:w-5 sm:h-5 text-primary mt-0.5 shrink-0" />
+                    <span className="text-xs sm:text-sm">Find doctors in your area</span>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircleIcon className="w-5 h-5 text-primary mt-0.5 shrink-0" />
-                    <span className="text-sm">Appointment reminders</span>
+                  <div className="flex items-start gap-2 sm:gap-3">
+                    <CheckCircleIcon className="w-4 h-4 sm:w-5 sm:h-5 text-primary mt-0.5 shrink-0" />
+                    <span className="text-xs sm:text-sm">Appointment reminders</span>
                   </div>
                 </div>
               </div>
@@ -77,100 +75,99 @@ function PricingSection() {
           </div>
 
           {/* Pro Plan - Featured */}
-          <div className="relative group">
+          <div className="relative group md:col-span-2 lg:col-span-1">
             {/* Popular Badge */}
-            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-20">
-              <div className="bg-gradient-to-r from-primary to-primary/80 text-primary-foreground px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
+            <div className="absolute -top-3 sm:-top-4 left-1/2 transform -translate-x-1/2 z-20">
+              <div className="bg-gradient-to-r from-primary to-primary/80 text-primary-foreground px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold shadow-lg">
                 Most Popular
               </div>
             </div>
 
-            <div className="relative bg-gradient-to-br from-card/95 to-card/70 backdrop-blur-xl rounded-3xl p-8 border-2 border-primary/30 hover:border-primary/50 transition-all duration-500 shadow-xl hover:shadow-2xl hover:shadow-primary/20 scale-105">
-              <div className="space-y-6">
-                <div className="space-y-3">
-                  <h3 className="text-2xl font-bold">Basic</h3>
+            <div className="relative bg-gradient-to-br from-card/95 to-card/70 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-6 sm:p-8 border-2 border-primary/30 hover:border-primary/50 transition-all duration-500 shadow-xl hover:shadow-2xl hover:shadow-primary/20 lg:scale-105">
+              <div className="space-y-4 sm:space-y-6">
+                <div className="space-y-2 sm:space-y-3">
+                  <h3 className="text-xl sm:text-2xl font-bold">Basic</h3>
                   <div className="flex items-end gap-1">
-                    <span className="text-4xl font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
+                    <span className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
                       $1
                     </span>
-                    <span className="text-muted-foreground mb-1">/month</span>
+                    <span className="text-muted-foreground mb-1 text-sm sm:text-base">/month</span>
                   </div>
-                  <p className="text-muted-foreground">
+                  <p className="text-muted-foreground text-sm sm:text-base">
                     AI consultations + appointment booking
                   </p>
                 </div>
 
-                <Button className="w-full py-3 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/95 hover:to-primary/85 text-primary-foreground rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+                <Button className="w-full py-2.5 sm:py-3 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/95 hover:to-primary/85 text-primary-foreground rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 text-sm sm:text-base">
                   Start Basic
                 </Button>
 
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <CheckCircleIcon className="w-5 h-5 text-primary mt-0.5 shrink-0" />
-                    <span className="text-sm">Everything in Free</span>
+                <div className="space-y-3 sm:space-y-4">
+                  <div className="flex items-start gap-2 sm:gap-3">
+                    <CheckCircleIcon className="w-4 h-4 sm:w-5 sm:h-5 text-primary mt-0.5 shrink-0" />
+                    <span className="text-xs sm:text-sm">Everything in Free</span>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircleIcon className="w-5 h-5 text-primary mt-0.5 shrink-0" />
-                    <span className="text-sm">10 AI voice calls per month</span>
+                  <div className="flex items-start gap-2 sm:gap-3">
+                    <CheckCircleIcon className="w-4 h-4 sm:w-5 sm:h-5 text-primary mt-0.5 shrink-0" />
+                    <span className="text-xs sm:text-sm">10 AI voice calls per month</span>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircleIcon className="w-5 h-5 text-primary mt-0.5 shrink-0" />
-                    <span className="text-sm">AI health guidance & advice</span>
+                  <div className="flex items-start gap-2 sm:gap-3">
+                    <CheckCircleIcon className="w-4 h-4 sm:w-5 sm:h-5 text-primary mt-0.5 shrink-0" />
+                    <span className="text-xs sm:text-sm">AI health guidance & advice</span>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircleIcon className="w-5 h-5 text-primary mt-0.5 shrink-0" />
-                    <span className="text-sm">Symptom assessment</span>
+                  <div className="flex items-start gap-2 sm:gap-3">
+                    <CheckCircleIcon className="w-4 h-4 sm:w-5 sm:h-5 text-primary mt-0.5 shrink-0" />
+                    <span className="text-xs sm:text-sm">Symptom assessment</span>
                   </div>
-                  
                 </div>
               </div>
             </div>
           </div>
 
           {/* Enterprise Plan */}
-          <div className="relative group">
-            <div className="relative bg-gradient-to-br from-card/90 to-card/60 backdrop-blur-xl rounded-3xl p-8 border border-border/50 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10">
-              <div className="space-y-6">
-                <div className="space-y-3">
-                  <h3 className="text-2xl font-bold">Pro</h3>
+          <div className="relative group md:col-span-2 lg:col-span-1">
+            <div className="relative bg-gradient-to-br from-card/90 to-card/60 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-border/50 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10">
+              <div className="space-y-4 sm:space-y-6">
+                <div className="space-y-2 sm:space-y-3">
+                  <h3 className="text-xl sm:text-2xl font-bold">Pro</h3>
                   <div className="flex items-end gap-1">
-                    <span className="text-4xl font-bold">$5</span>
-                    <span className="text-muted-foreground mb-1">/month</span>
+                    <span className="text-3xl sm:text-4xl font-bold">$5</span>
+                    <span className="text-muted-foreground mb-1 text-sm sm:text-base">/month</span>
                   </div>
-                  <p className="text-muted-foreground">
+                  <p className="text-muted-foreground text-sm sm:text-base">
                     Unlimited AI consultations
                   </p>
                 </div>
 
                 <Button
                   variant="outline"
-                  className="w-full py-3 border-2 border-primary/20 hover:border-primary/40 hover:bg-primary/5 rounded-xl font-semibold transition-all duration-300"
+                  className="w-full py-2.5 sm:py-3 border-2 border-primary/20 hover:border-primary/40 hover:bg-primary/5 rounded-xl font-semibold transition-all duration-300 text-sm sm:text-base"
                 >
                   Upgrade to AI Pro
                 </Button>
 
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <CheckCircleIcon className="w-5 h-5 text-primary mt-0.5 shrink-0" />
-                    <span className="text-sm">Everything in Basic</span>
+                <div className="space-y-3 sm:space-y-4">
+                  <div className="flex items-start gap-2 sm:gap-3">
+                    <CheckCircleIcon className="w-4 h-4 sm:w-5 sm:h-5 text-primary mt-0.5 shrink-0" />
+                    <span className="text-xs sm:text-sm">Everything in Basic</span>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircleIcon className="w-5 h-5 text-primary mt-0.5 shrink-0" />
-                    <span className="text-sm">Unlimited AI voice calls</span>
+                  <div className="flex items-start gap-2 sm:gap-3">
+                    <CheckCircleIcon className="w-4 h-4 sm:w-5 sm:h-5 text-primary mt-0.5 shrink-0" />
+                    <span className="text-xs sm:text-sm">Unlimited AI voice calls</span>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircleIcon className="w-5 h-5 text-primary mt-0.5 shrink-0" />
-                    <span className="text-sm">
+                  <div className="flex items-start gap-2 sm:gap-3">
+                    <CheckCircleIcon className="w-4 h-4 sm:w-5 sm:h-5 text-primary mt-0.5 shrink-0" />
+                    <span className="text-xs sm:text-sm">
                       Advanced health care analysis
                     </span>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircleIcon className="w-5 h-5 text-primary mt-0.5 shrink-0" />
-                    <span className="text-sm">Personalized care plans</span>
+                  <div className="flex items-start gap-2 sm:gap-3">
+                    <CheckCircleIcon className="w-4 h-4 sm:w-5 sm:h-5 text-primary mt-0.5 shrink-0" />
+                    <span className="text-xs sm:text-sm">Personalized care plans</span>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircleIcon className="w-5 h-5 text-primary mt-0.5 shrink-0" />
-                    <span className="text-sm">24/7 priority AI support</span>
+                  <div className="flex items-start gap-2 sm:gap-3">
+                    <CheckCircleIcon className="w-4 h-4 sm:w-5 sm:h-5 text-primary mt-0.5 shrink-0" />
+                    <span className="text-xs sm:text-sm">24/7 priority AI support</span>
                   </div>
                 </div>
               </div>

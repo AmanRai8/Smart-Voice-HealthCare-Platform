@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import {
   SignInButton,
+  SignUpButton,
   SignedIn,
   useClerk,
   useUser,
@@ -24,6 +25,7 @@ import {
   DollarSign,
   Shield
 } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 function StatusPill({ status }: { status?: string }) {
   const configs: Record<string, { bg: string; text: string; border: string; label: string }> = {
@@ -75,7 +77,7 @@ function StatusPill({ status }: { status?: string }) {
 }
 
 export default function ProfilePage() {
-  const { isSignedIn, user, isLoaded } = useUser();
+  const { isSignedIn, user } = useUser();
   const { openUserProfile } = useClerk();
 
   const {
@@ -93,24 +95,11 @@ export default function ProfilePage() {
   const [lastName, setLastName] = useState("");
   const [isSaving, setIsSaving] = useState(false);
 
-  if (!isLoaded) {
-    return (
-      <>
-        <Navbar />
-        <div className="min-h-screen flex items-center justify-center px-6">
-          <div className="text-center">
-            <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-            <p className="text-muted-foreground">Loading your profile...</p>
-          </div>
-        </div>
-      </>
-    );
-  }
-
   if (!isSignedIn) {
     return (
       <>
         <div className="min-h-screen flex flex-col items-center justify-center px-6">
+          
           <div className="max-w-md text-center">
             <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
               <User className="w-8 h-8 text-primary" />
@@ -121,11 +110,17 @@ export default function ProfilePage() {
             <p className="text-muted-foreground mb-6">
               You need to sign in to view and manage your profile.
             </p>
-            <SignInButton mode="modal">
-              <button className="px-6 py-3 bg-primary text-primary-foreground rounded-xl font-medium hover:bg-primary/90 transition-all">
-                Sign In to Continue
-              </button>
-            </SignInButton>
+            
+            <div className="items-center gap-3">
+          <SignInButton mode="modal">
+            <Button variant={"ghost"} size={"sm"}>
+              Login
+            </Button>
+          </SignInButton>
+          <SignUpButton mode="modal">
+            <Button size={"sm"}>Sign Up</Button>
+          </SignUpButton>
+        </div>
           </div>
         </div>
       </>

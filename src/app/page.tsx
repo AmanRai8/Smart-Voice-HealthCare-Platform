@@ -17,12 +17,14 @@ export default async function Home() {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <Hero />
-      <About />
-      <HowItWorks />
-      <WhatToAsk />
-      <PricingSection />
-      <ContactUs />
+      <main className="w-full">
+        <Hero />
+        <About />
+        <HowItWorks />
+        <WhatToAsk />
+        <PricingSection />
+        <ContactUs />
+      </main>
       <Footer />
     </div>
   );

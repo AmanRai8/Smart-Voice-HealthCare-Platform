@@ -49,11 +49,9 @@ export default function ContactUs() {
     }
   };
 
- 
   const whatsappNumber = "+977 9826337227";
   const whatsappLink = `https://wa.me/${whatsappNumber.replace(/\s/g, '')}`;
 
- 
   const socialLinks = {
     facebook: "https://www.facebook.com/aman.rai.131116/", 
     linkedin: "https://www.linkedin.com/in/aman-rai69420/", 
@@ -61,31 +59,31 @@ export default function ContactUs() {
   };
 
   return (
-    <section id="contact" className="relative py-20 px-6 bg-background">
+    <section id="contact" className="relative py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-background">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
+        <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
             Get in <span className="text-primary">Touch</span>
           </h1>
-          <p className="mt-4 text-muted-foreground leading-relaxed">
+          <p className="mt-3 sm:mt-4 text-muted-foreground leading-relaxed text-sm sm:text-base">
             Have a question, feedback, or need support? We're here to help you
             navigate healthcare with clarity and confidence.
           </p>
         </div>
 
         {/* Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10">
           {/* Contact Info */}
-          <div className="space-y-6">
-            <div className="bg-gradient-to-br from-card/90 to-card/60 backdrop-blur-xl rounded-3xl p-6 border border-border/50">
-              <div className="flex items-start gap-4">
-                <Mail className="h-6 w-6 text-primary mt-1" />
-                <div>
-                  <h3 className="font-semibold">Email Us</h3>
+          <div className="space-y-4 sm:space-y-6">
+            <div className="bg-gradient-to-br from-card/90 to-card/60 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-5 sm:p-6 border border-border/50">
+              <div className="flex items-start gap-3 sm:gap-4">
+                <Mail className="h-5 w-5 sm:h-6 sm:w-6 text-primary mt-1 shrink-0" />
+                <div className="min-w-0">
+                  <h3 className="font-semibold text-sm sm:text-base">Email Us</h3>
                   <a
                     href="mailto:amanrai2002acr@gmail.com"
-                    className="text-sm text-muted-foreground hover:text-primary transition"
+                    className="text-xs sm:text-sm text-muted-foreground hover:text-primary transition break-all"
                   >
                     amanrai2002acr@gmail.com
                   </a>
@@ -93,14 +91,14 @@ export default function ContactUs() {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-card/90 to-card/60 backdrop-blur-xl rounded-3xl p-6 border border-border/50">
-              <div className="flex items-start gap-4">
-                <Phone className="h-6 w-6 text-primary mt-1" />
+            <div className="bg-gradient-to-br from-card/90 to-card/60 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-5 sm:p-6 border border-border/50">
+              <div className="flex items-start gap-3 sm:gap-4">
+                <Phone className="h-5 w-5 sm:h-6 sm:w-6 text-primary mt-1 shrink-0" />
                 <div>
-                  <h3 className="font-semibold">Call Support</h3>
+                  <h3 className="font-semibold text-sm sm:text-base">Call Support</h3>
                   <a
                     href="tel:+9779826337227"
-                    className="text-sm text-muted-foreground hover:text-primary transition"
+                    className="text-xs sm:text-sm text-muted-foreground hover:text-primary transition"
                   >
                     +977 9826337227
                   </a>
@@ -108,12 +106,12 @@ export default function ContactUs() {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-card/90 to-card/60 backdrop-blur-xl rounded-3xl p-6 border border-border/50">
-              <div className="flex items-start gap-4">
-                <MapPin className="h-6 w-6 text-primary mt-1" />
+            <div className="bg-gradient-to-br from-card/90 to-card/60 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-5 sm:p-6 border border-border/50">
+              <div className="flex items-start gap-3 sm:gap-4">
+                <MapPin className="h-5 w-5 sm:h-6 sm:w-6 text-primary mt-1 shrink-0" />
                 <div>
-                  <h3 className="font-semibold">Our Location</h3>
-                  <p className="text-sm text-muted-foreground">
+                  <h3 className="font-semibold text-sm sm:text-base">Our Location</h3>
+                  <p className="text-xs sm:text-sm text-muted-foreground">
                     Kathmandu, Nepal
                   </p>
                 </div>
@@ -121,36 +119,36 @@ export default function ContactUs() {
             </div>
 
             {/* Social Media Links */}
-            <div className="bg-gradient-to-br from-card/90 to-card/60 backdrop-blur-xl rounded-3xl p-6 border border-border/50">
-              <h3 className="font-semibold mb-4">Connect With Us</h3>
-              <div className="flex gap-4">
+            <div className="bg-gradient-to-br from-card/90 to-card/60 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-5 sm:p-6 border border-border/50">
+              <h3 className="font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Connect With Us</h3>
+              <div className="flex gap-3 sm:gap-4">
                 <a
                   href={socialLinks.facebook}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 text-primary transition"
+                  className="flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-primary/10 hover:bg-primary/20 text-primary transition"
                   aria-label="Facebook"
                 >
-                  <Facebook className="h-5 w-5" />
+                  <Facebook className="h-4 w-4 sm:h-5 sm:w-5" />
                 </a>
                 <a
                   href={socialLinks.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 text-primary transition"
+                  className="flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-primary/10 hover:bg-primary/20 text-primary transition"
                   aria-label="LinkedIn"
                 >
-                  <Linkedin className="h-5 w-5" />
+                  <Linkedin className="h-4 w-4 sm:h-5 sm:w-5" />
                 </a>
                 <a
                   href={socialLinks.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 text-primary transition"
+                  className="flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-primary/10 hover:bg-primary/20 text-primary transition"
                   aria-label="WhatsApp"
                 >
                   <svg
-                    className="h-5 w-5"
+                    className="h-4 w-4 sm:h-5 sm:w-5"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
@@ -164,13 +162,13 @@ export default function ContactUs() {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-gradient-to-br from-card/90 to-card/60 backdrop-blur-xl rounded-3xl p-8 border border-border/50">
-            <div className="flex items-center gap-3 mb-6">
-              <MessageSquare className="h-6 w-6 text-primary" />
-              <h2 className="text-xl font-semibold">Send us a message</h2>
+          <div className="bg-gradient-to-br from-card/90 to-card/60 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-border/50">
+            <div className="flex items-center gap-2 sm:gap-3 mb-5 sm:mb-6">
+              <MessageSquare className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
+              <h2 className="text-lg sm:text-xl font-semibold">Send us a message</h2>
             </div>
 
-            <form className="space-y-5" onSubmit={handleSubmit}>
+            <form className="space-y-4 sm:space-y-5" onSubmit={handleSubmit}>
               <input
                 type="text"
                 name="name"
@@ -179,7 +177,7 @@ export default function ContactUs() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
+                className="w-full rounded-xl border border-border bg-background px-3 sm:px-4 py-2.5 sm:py-3 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
               />
               <input
                 type="email"
@@ -189,7 +187,7 @@ export default function ContactUs() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
+                className="w-full rounded-xl border border-border bg-background px-3 sm:px-4 py-2.5 sm:py-3 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
               />
               <textarea
                 rows={5}
@@ -199,13 +197,13 @@ export default function ContactUs() {
                 value={formData.message}
                 onChange={handleChange}
                 required
-                className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
+                className="w-full rounded-xl border border-border bg-background px-3 sm:px-4 py-2.5 sm:py-3 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
               />
 
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90 transition disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full rounded-xl bg-primary px-4 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold text-primary-foreground hover:opacity-90 transition disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? "Sending..." : "Send Message"}
               </button>
@@ -215,13 +213,13 @@ export default function ContactUs() {
       </div>
 
       {/* Full Width Map */}
-      <div className="mt-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="bg-gradient-to-br from-card/90 to-card/60 backdrop-blur-xl border border-border/50 rounded-3xl overflow-hidden">
+      <div className="mt-12 sm:mt-16 md:mt-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="bg-gradient-to-br from-card/90 to-card/60 backdrop-blur-xl border border-border/50 rounded-2xl sm:rounded-3xl overflow-hidden">
             <iframe
               title="Our Location"
               src="https://www.google.com/maps?q=Kathmandu%2C%20Nepal&output=embed"
-              className="w-full h-[380px] border-0"
+              className="w-full h-[280px] sm:h-[320px] md:h-[380px] border-0"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
