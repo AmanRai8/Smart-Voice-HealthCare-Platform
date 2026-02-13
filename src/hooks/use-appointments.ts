@@ -2,9 +2,11 @@
 
 import {
   bookAppointment,
+  cancelAppointment,
   getAppointments,
   getBookedTimeSlots,
   getUserAppointments,
+  rescheduleAppointment,
   updateAppointmentStatus,
 } from "@/lib/actions/appointments";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
@@ -20,9 +22,10 @@ export function useGetAppointments() {
 
 export function useBookedTimeSlots(doctorId: string, date: string) {
   return useQuery({
-    queryKey: ["getBookedTimeSlots"],
-    queryFn: () => getBookedTimeSlots(doctorId!, date),
-    enabled: !!doctorId && !!date, // only run query if both doctorId and date are provided
+    queryKey: ["getBookedTimeSlots", doctorId, date],
+    queryFn: () => getBookedTimeSlots(doctorId, date),
+    enabled: !!doctorId && !!date,
+    staleTime: 0,
   });
 }
 
@@ -57,5 +60,29 @@ export function useUpdateAppointmentStatus() {
       queryClient.invalidateQueries({ queryKey: ["getAppointments"] });
     },
     onError: (error) => console.error("Failed to update appointment:", error),
+  });
+}
+
+export function useCancelAppointment() {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: cancelAppointment,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["getUserAppointments"] });
+      queryClient.invalidateQueries({ queryKey: ["getAppointments"] });
+    },
+  });
+}
+
+export function useRescheduleAppointment() {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: rescheduleAppointment,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["getUserAppointments"] });
+      queryClient.invalidateQueries({ queryKey: ["getAppointments"] });
+    },
   });
 }

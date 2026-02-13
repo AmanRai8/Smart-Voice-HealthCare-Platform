@@ -217,17 +217,16 @@ export const intents = [
     response:
       "Manage your profile and account settings in your <a href='/profile' class='text-primary underline hover:text-primary/80'>Account Settings</a>.",
   },
- {
-  keywords: ["login", "sign in", "access"],
-  response:
-    "Sign in to your account <span data-auth='signin' class='text-primary underline cursor-pointer'>here</span>.",
-},
-{
-  keywords: ["register", "sign up", "create account"],
-  response:
-    "Create a new account <span data-auth='signup' class='text-primary underline cursor-pointer'>here</span>.",
-},
-
+  {
+    keywords: ["login", "sign in", "access"],
+    response:
+      "Sign in to your account at the <a href='/profile' class='text-primary underline hover:text-primary/80'>Login</a> page.",
+  },
+  {
+    keywords: ["register", "sign up", "create account"],
+    response:
+      "Create a new account on our <a href='/profile' class='text-primary underline hover:text-primary/80'>Registration</a> page.",
+  },
 
   // Medical Records & History
   {
