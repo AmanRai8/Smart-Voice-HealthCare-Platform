@@ -8,59 +8,137 @@ A modern **web-based SaaS healthcare platform** that centralizes healthcare serv
 ## 🚀 Features
 
 ### 1. Modern Landing Page
-- Responsive UI with gradients and professional 3D illustrations.
+- Fully responsive UI with gradients and professional 3D illustrations.
 - Hero section featuring a friendly 3D healthcare assistant.
-- Informative sections: platform features, subscription plans, and “What to Ask”.
+- Dedicated sections:
+  - How It Works
+  - About Platform
+  - What to Ask
+  - Pricing
+  - Contact
+- Emergency guidance access.
+- Consistent SaaS branding across pages.
 
-### 2. Authentication & Authorization
-- Sign up / Sign in with Email, Google, or GitHub.
-- Email verification via 6-digit OTP.
-- Role-based access:
-  - **Regular Users:** Book appointments, use AI assistant, view subscriptions.
-  - **Admins:** Full dashboard access to manage users, appointments, and analytics.
+---
 
-### 3. Appointment Booking System
-- 3-step booking flow: Select doctor → Choose service & time → Confirm booking.
-- Confirmation emails sent automatically.
-- Users can view upcoming appointments in their dashboard.
-- Admins can view all appointments in the admin panel.
+### 2. Authentication & Role-Based Access
+- Secure authentication via **Clerk**:
+  - Email & Password
+  - Google
+  - GitHub
+- Email verification via **6-digit OTP**.
+- Role-based access control:
+  - **Users:** Book, reschedule, cancel appointments, manage profile, use AI.
+  - **Admins:** Full system control including analytics and management tools.
+- Protected routes (Dashboard, Appointments, Voice, Pro, Admin).
 
-### 4. AI Voice Agent
-- Interactive AI assistant powered by **Vapi**.
-- Handles queries about:
-  - Appointments
-  - Pricing & subscriptions
+---
+
+### 3. Advanced Appointment Management
+- 3-Step Booking Flow:
+  1. Select Doctor  
+  2. Choose Service & Time  
+  3. Confirm Appointment  
+- Real-time booked slot handling per doctor & date.
+- Appointment statuses:
+  - `PENDING`
+  - `CONFIRMED`
+  - `COMPLETED`
+  - `CANCELLED`
+- Users can:
+  - View upcoming appointments
+  - Cancel appointments
+  - Reschedule using next 5 available days & time slots
+- Admins can:
+  - Confirm appointments
+  - Mark as completed
+  - Cancel or re-open appointments
+
+---
+
+### 4. Admin Dashboard & Analytics
+- Comprehensive admin dashboard with:
+  - Total doctors
+  - Active doctors
+  - Total appointments
+  - Completed appointments
+- Advanced analytics:
+  - Appointments trend (last 7 days)
+  - Status breakdown (Confirmed, Pending, Completed, Cancelled)
+  - Top doctors by bookings
+- Search & filter system for appointments.
+- Real-time appointment status management.
+
+---
+
+### 5. AI Voice Assistant
+- Voice AI powered by **Vapi**.
+- Handles user queries about:
+  - Booking appointments
+  - Subscription plans
   - Doctors & specialties
-  - Health guidance
+  - Platform usage
+- Designed for healthcare-specific conversations.
+- Includes emergency redirection guidance.
 
-### 5. Subscription Management
-- Basic & Premium plans.
-- Automated invoice generation via email.
-- Smart plan upgrades for seamless subscription changes.
+---
 
-### 6. Notifications
-- Email notifications via **Resend** for:
-  - Booking confirmations
+### 6. Subscription & Billing System
+- Basic and Premium subscription plans.
+- Secure subscription handling via **Clerk**.
+- Smart subscription upgrades.
+- Automated invoice notifications via email.
+- Billing management inside user profile.
+
+---
+
+### 7. Personalized User Dashboard
+- Dynamic greeting based on time of day.
+- Profile view button with image preview.
+- Upcoming appointment summary.
+- Quick access to:
+  - Book appointment
+  - Voice assistant
+  - Subscription management
+- Clean and user-friendly interface.
+
+---
+
+### 8. Email & Notification System
+- Email system powered by **Resend**.
+- Automatic emails for:
+  - Appointment confirmations
   - Contact inquiries
-  - Subscription updates
+  - Subscription-related updates
+- Professional email templates with healthcare styling.
 
-### 7. Dashboard
-- Personalized dashboard showing:
-  - Welcome message
-  - Upcoming appointments
-  - Activity overview
-  - Quick access to key actions
+---
 
-### 8. Admin Features
-- Separate admin dashboard for managing:
-  - Users
-  - Appointments
-  - Platform analytics
+### 9. Emergency Guidance Section
+- Dedicated emergency page.
+- Clear guidance for urgent health situations.
+- Platform disclaimer for non-emergency services.
+- 112 (Nepal) emergency call instruction.
 
-### 9. Frontend & UI
-- Built with **React**, **Next.js**, **Tailwind CSS**, and **Shadcn UI**.
-- Smooth interactions using **TanStack Query**.
-- Consistent 3D illustration theme for hero, About, and WhatToAsk sections.
+---
+
+### 10. Frontend & Technical Stack
+- Built with:
+  - **Next.js (App Router)**
+  - **React**
+  - **Tailwind CSS**
+  - **Shadcn UI**
+- Data management using **TanStack Query**.
+- PostgreSQL database via **Neon**.
+- Prisma ORM for database management.
+- Clean server/client component architecture.
+
+---
+
+### 11. Responsive & Mobile-First Design
+- Dedicated mobile card view for appointments.
+- Responsive admin interface.
+- Optimized UI interactions across all devices.
 
 ---
 
