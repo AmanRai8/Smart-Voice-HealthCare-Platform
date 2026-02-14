@@ -32,6 +32,7 @@ import {
   UserCheck,
   DollarSign,
   Percent,
+  BarChart2,
 } from "lucide-react";
 
 const COLORS = {
@@ -387,7 +388,7 @@ export default function AdminAnalytics() {
         <Card className="hover:shadow-lg transition-shadow">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <BarChart className="size-5 text-primary" />
+              <BarChart2 className="size-5 text-primary" />
               Doctor Performance Comparison
             </CardTitle>
           </CardHeader>

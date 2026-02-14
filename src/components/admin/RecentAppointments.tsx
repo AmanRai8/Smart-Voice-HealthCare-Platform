@@ -300,6 +300,19 @@ function RecentAppointments() {
                     <XCircle className="size-3 mr-1" />
                     Cancel
                   </Button>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => setStatus(appointment.id, "CONFIRMED")}
+                    disabled={
+                      disabled ||
+                      !["CANCELLED", "PENDING"].includes(appointment.status)
+                    }
+                    className="flex-1 text-xs"
+                  >
+                    <RotateCcw className="size-3 mr-1" />
+                    Re-open
+                  </Button>
                 </div>
               </div>
             );
